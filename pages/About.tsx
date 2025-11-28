@@ -35,8 +35,8 @@ const About: React.FC = () => {
                 className="max-w-md mt-8 md:mt-0"
             >
                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                    User Value Inc. is a premier digital creative studio.
-                    We architect experiences that bridge the gap between business strategy and user needs.
+                    User Value Inc. is an elite digital product studio.
+                    Operating as a high-precision specialized unit for your digital strategy.
                 </p>
             </motion.div>
          </div>
@@ -48,9 +48,9 @@ const About: React.FC = () => {
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2670&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop"
             alt="Minimalist Workspace"
-            className="w-full h-full object-cover opacity-70 filter grayscale group-hover:grayscale-0 transition-all duration-1000"
+            className="w-full h-full object-cover opacity-60 filter grayscale group-hover:grayscale-0 transition-all duration-1000"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
       </div>
@@ -61,19 +61,20 @@ const About: React.FC = () => {
             <div className="lg:w-1/3">
                 <div className="sticky top-32">
                     <div className="aspect-[3/4] overflow-hidden mb-6 relative group border border-white/10 rounded-sm">
+                         {/* Updated Representative Image: Blue sweater/top, bob hair, professional look */}
                          <img 
-                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop" 
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop" 
                             alt="Representative Director" 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90 contrast-110"
                         />
                         <div className="absolute bottom-4 left-4">
-                            <div className="bg-black/50 backdrop-blur-md px-3 py-1 text-xs font-mono border border-white/10">
+                            <div className="bg-black/50 backdrop-blur-md px-3 py-1 text-xs font-mono border border-white/10 text-white">
                                 CEO / DIRECTOR
                             </div>
                         </div>
                     </div>
                     <div>
-                        <p className="font-display font-bold text-2xl mb-1">{COMPANY_INFO.representative}</p>
+                        <p className="font-display font-bold text-2xl mb-1 text-white">{COMPANY_INFO.representative}</p>
                         <p className="font-mono text-xs text-gray-500 uppercase tracking-widest">Representative Director</p>
                     </div>
                 </div>
@@ -85,32 +86,37 @@ const About: React.FC = () => {
                     <section>
                          <span className="font-mono text-brand-accent text-sm tracking-widest block mb-6">// 01 — IDENTITY</span>
                          <h3 className="text-3xl md:text-5xl font-display font-bold mb-8 text-white">
-                            Strategic Partner for <br/>
-                            <span className="text-gray-500">Digital Evolution.</span>
+                            Elite Digital Product Studio.<br/>
+                            <span className="text-gray-500">Precision & Impact.</span>
                          </h3>
                          <p className="text-xl text-gray-300 leading-relaxed font-light mb-8">
-                            私たちは、ビジネスの核心を深く理解し、デジタルの力で変革をもたらすクリエイティブ・パートナーです。
+                            User Value Inc.は、単なるシステムの構築者ではありません。<br />
+                            ユーザーの本質的な価値（User Value）を見出し、<br />
+                            それをデジタルの力で最大化するパートナーです。
+                         </p>
+                         <p className="text-lg text-gray-400 leading-relaxed font-light mb-8">
+                            「規模」を追わず、「質」と「衝撃」を追求するデジタル・ブティックです。
                             <br/><br/>
-                            単なる制作代行ではなく、戦略立案から実装、グロースまでを一貫してリードします。
-                            高度な技術力と洗練されたデザイン美学を融合させ、ユーザーの心を動かす「本質的な価値（User Value）」を創出。
-                            あなたのビジネスを次なるステージへと導きます。
+                            現代のビジネスにおいて必要なのは、巨大な組織図ではなく、鋭利な戦略と実装力を持つプロフェッショナルな「個」の力です。
+                            高度なエンジニアリング能力と洗練されたデザイン美学を兼ね備えたデジタル・スタジオとして、
+                            クライアントのビジネスに深くコミットし、市場を変えるプロダクトを共創します。
                          </p>
                          
                          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg">
+                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg hover:bg-white/10 transition-colors duration-300">
                                 <Zap className="w-8 h-8 text-brand-accent mb-4" />
-                                <h4 className="font-bold mb-2">Agility</h4>
-                                <p className="text-sm text-gray-400">変化を恐れず、最適解へ素早く到達する実行力。</p>
+                                <h4 className="font-bold mb-2 text-white">Speed & Precision</h4>
+                                <p className="text-sm text-gray-400">意思決定から実装までを最速で。無駄を削ぎ落とした高密度な開発。</p>
                             </div>
-                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg">
+                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg hover:bg-white/10 transition-colors duration-300">
                                 <Cpu className="w-8 h-8 text-brand-accent mb-4" />
-                                <h4 className="font-bold mb-2">Expertise</h4>
-                                <p className="text-sm text-gray-400">最新技術とデザイン原則に基づいたプロの品質。</p>
+                                <h4 className="font-bold mb-2 text-white">Technical Mastery</h4>
+                                <p className="text-sm text-gray-400">モダンな技術スタックを自在に操り、堅牢でスケーラブルな基盤を構築。</p>
                             </div>
-                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg">
+                            <div className="p-6 bg-white/5 border border-white/5 rounded-lg hover:bg-white/10 transition-colors duration-300">
                                 <Globe className="w-8 h-8 text-brand-accent mb-4" />
-                                <h4 className="font-bold mb-2">Impact</h4>
-                                <p className="text-sm text-gray-400">ビジネス成果とユーザー満足を両立させる成果。</p>
+                                <h4 className="font-bold mb-2 text-white">Global Standard</h4>
+                                <p className="text-sm text-gray-400">世界水準のUI/UXデザインで、国境を越える普遍的な価値を提供。</p>
                             </div>
                          </div>
                     </section>
@@ -125,9 +131,9 @@ const About: React.FC = () => {
                                 { label: 'Headquarters', value: COMPANY_INFO.location },
                                 { label: 'Contact', value: COMPANY_INFO.phone },
                             ].map((row, i) => (
-                                <div key={i} className="py-6 border-b border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 group hover:bg-white/5 transition-colors px-2">
+                                <div key={i} className="py-6 border-b border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 group hover:bg-white/5 transition-colors px-2 cursor-default">
                                     <dt className="text-gray-500 font-mono text-xs uppercase tracking-wider flex items-center">{row.label}</dt>
-                                    <dd className="md:col-span-2 text-lg font-light">{row.value}</dd>
+                                    <dd className="md:col-span-2 text-lg font-light text-white">{row.value}</dd>
                                 </div>
                             ))}
                          </div>

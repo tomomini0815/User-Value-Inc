@@ -20,8 +20,8 @@ const Contact: React.FC = () => {
                     </h1>
                     <div className="space-y-8 text-lg">
                         <p className="text-gray-400 max-w-md">
-                            We are always looking for new challenges.
-                            Tell us about your idea, and let's build something extraordinary together.
+                            User Value Inc.は常に新しい挑戦を求めています。
+                            あなたのアイデアをお聞かせください。共に素晴らしいものを創りましょう。
                         </p>
                         <div className="flex flex-col gap-2">
                              <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">EMAIL</span>
@@ -42,16 +42,20 @@ const Contact: React.FC = () => {
                  className="bg-white/5 p-8 md:p-12 rounded-xl backdrop-blur-sm border border-white/5"
             >
                 <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                    {['Name', 'Email', 'Company'].map((label) => (
-                        <div key={label} className="group relative">
+                    {[
+                      { id: 'Name', label: 'お名前', type: 'text' },
+                      { id: 'Email', label: 'メールアドレス', type: 'email' },
+                      { id: 'Company', label: '会社名', type: 'text' }
+                    ].map((field) => (
+                        <div key={field.id} className="group relative">
                             <input 
-                                type={label === 'Email' ? 'email' : 'text'}
+                                type={field.type}
                                 required
                                 className="w-full bg-transparent border-b border-white/20 py-4 text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent"
-                                placeholder={label}
+                                placeholder={field.label}
                             />
                             <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                {label}
+                                {field.label}
                             </label>
                         </div>
                     ))}
@@ -60,10 +64,10 @@ const Contact: React.FC = () => {
                             rows={4}
                             required
                             className="w-full bg-transparent border-b border-white/20 py-4 text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent resize-none"
-                            placeholder="Message"
+                            placeholder="お問い合わせ内容"
                         />
                         <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                            Tell us about your project
+                            お問い合わせ内容
                         </label>
                     </div>
 
@@ -71,7 +75,7 @@ const Contact: React.FC = () => {
                         type="submit"
                         className="w-full py-5 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-brand-accent hover:text-white transition-all duration-300"
                     >
-                        Submit Request
+                        送信する
                     </button>
                 </form>
             </motion.div>

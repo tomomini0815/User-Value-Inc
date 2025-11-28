@@ -1,3 +1,9 @@
+import React from 'react';
+
+/**
+ * Basic company information structure.
+ * Used in Footer, About page, and Meta tags.
+ */
 export interface CompanyInfo {
   name: string;
   nameEn: string;
@@ -8,27 +14,41 @@ export interface CompanyInfo {
   representative: string;
 }
 
+/**
+ * Service offering item.
+ * Displayed in the Services section/page.
+ */
 export interface ServiceItem {
   id: string;
   title: string;
   description: string;
   icon: React.ElementType;
-  image: string;
-  tags: string[];
+  image: string; // URL to the service abstract image
+  tags: string[]; // Tech stack tags (e.g., 'React', 'Next.js')
 }
 
+/**
+ * Proprietary Product/Project item.
+ * Represents in-house SaaS or major case studies.
+ */
 export interface ProjectItem {
   id: string;
   title: string;
-  description: string;
-  longDescription: string;
-  image: string;
-  url: string;
-  tags: string[];
+  description: string; // Short description for cards
+  longDescription: string; // Longer description for details
+  image: string; // URL to the product screenshot/mockup
+  url: string; // External link to the live project/demo
+  tags: string[]; // Key features or technologies
 }
 
+/**
+ * Valid page identifiers for routing.
+ */
 export type PageId = 'home' | 'services' | 'about' | 'contact';
 
+/**
+ * Navigation item structure for Header/Menu.
+ */
 export interface NavItem {
   id: PageId;
   label: string;

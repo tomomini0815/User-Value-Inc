@@ -1,5 +1,5 @@
 {
-  "name": "copy-of-user-value-inc.",
+  "name": "user-value-inc.-corporate-site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +12,10 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "lucide-react": "^0.555.0",
-    "framer-motion": "^12.23.24"
+    "framer-motion": "^12.23.24",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0",
+    "gsap": "^3.12.5"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

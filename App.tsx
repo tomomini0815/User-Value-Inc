@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   // Loading simulation
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    const timer = setTimeout(() => setIsLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,33 +42,37 @@ const App: React.FC = () => {
                   key="loader"
                   initial={{ opacity: 1 }}
                   exit={{ y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-                  className="fixed inset-0 bg-brand-black flex items-center justify-center z-[9999]"
+                  className="fixed inset-0 bg-[#000000] flex items-center justify-center z-[9999]"
               >
-                  <motion.h1 
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="font-display text-4xl font-bold tracking-widest text-white"
-                  >
-                      USER VALUE
-                  </motion.h1>
+                  <div className="overflow-hidden">
+                    <motion.h1 
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                        className="font-display text-4xl md:text-6xl font-bold tracking-widest text-white"
+                    >
+                        USER VALUE
+                    </motion.h1>
+                  </div>
               </motion.div>
           )}
       </AnimatePresence>
 
       {!isLoading && (
-        <div className="bg-brand-black min-h-screen text-white font-sans selection:bg-brand-accent selection:text-white relative flex flex-col">
+        <div className="bg-[#050505] min-h-screen text-white font-sans selection:bg-white selection:text-black relative">
           <div className="bg-noise" /> 
           
           <CustomCursor />
           <Header currentPage={currentPage} onNavigate={setCurrentPage} />
           
-          <main className="relative z-10 flex-grow bg-brand-black shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* Main Content Wrapper - Needs background to cover footer */}
+          <main className="relative z-10 bg-[#050505] mb-[85vh] md:mb-[65vh] shadow-[0_50px_100px_rgba(0,0,0,0.5)]">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentPage}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 >
                     {renderPage()}
@@ -76,10 +80,8 @@ const App: React.FC = () => {
             </AnimatePresence>
           </main>
 
-          {/* Footer is now revealed via z-index in the component itself, or we place it here to be revealed behind main */}
-          <div className="sticky bottom-0 z-0">
-             <Footer onNavigate={setCurrentPage} />
-          </div>
+          {/* Sticky Reveal Footer sits behind main content */}
+          <Footer onNavigate={setCurrentPage} />
         </div>
       )}
     </>

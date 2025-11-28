@@ -6,7 +6,7 @@ export const COMPANY_INFO: CompanyInfo & { email: string } = {
   nameEn: "User Value Inc.",
   establishment: "2021年2月",
   capital: "500万円",
-  location: "神奈川県秦野市渋沢",
+  location: "Kanagawa, JP",
   phone: "044-400-2258",
   representative: "恵良 友美",
   email: "uservalue2021@gmail.com"
@@ -16,7 +16,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's1',
     title: "Web App Development",
-    description: "React, Next.js, Vue.jsなどのモダンフレームワークを駆使し、ビジネスの加速装置となるWebアプリケーションを構築します。堅牢性と拡張性を兼ね備えたアーキテクチャで、長期的な価値を提供します。",
+    description: "React, Next.js, Vue.jsなどのモダンフレームワークを駆使し、ビジネスの加速装置となるWebアプリケーションを構築。堅牢性と拡張性を兼ね備えたアーキテクチャで、長期的な価値を提供します。",
     icon: Monitor,
     // Abstract 3D shape / Code flow
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2670&auto=format&fit=crop", 

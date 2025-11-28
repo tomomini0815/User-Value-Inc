@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Value Inc. | Digital Craftsmanship</title>
+    <meta name="description" content="株式会社ユーザーバリューのコーポレートサイト。Webアプリ、モバイルアプリ制作、UI/UX改善、SaaSプロダクト開発を行うデジタルクリエイティブスタジオです。" />
+    <meta name="keywords" content="User Value Inc., 株式会社ユーザーバリュー, Web制作, アプリ開発, UI/UXデザイン, DX, SaaS" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +33,17 @@
             },
             animation: {
               'spin-slow': 'spin 30s linear infinite',
+              'aurora': 'aurora 60s linear infinite',
+            },
+            keyframes: {
+              aurora: {
+                from: {
+                  backgroundPosition: '50% 50%, 50% 50%',
+                },
+                to: {
+                  backgroundPosition: '350% 50%, 350% 50%',
+                },
+              },
             },
             backgroundImage: {
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -40,6 +53,17 @@
       }
     </script>
     <style>
+      :root {
+        --white: #ffffff;
+        --black: #000000;
+        --transparent: transparent;
+        --blue-500: #3b82f6;
+        --indigo-300: #a5b4fc;
+        --blue-300: #93c5fd;
+        --violet-200: #ddd6fe;
+        --blue-400: #60a5fa;
+      }
+
       body {
         background-color: #050505;
         color: #ffffff;
@@ -91,7 +115,6 @@
         color: #000;
       }
       
-      /* Lenis-like smooth scroll setup for future extensibility */
       html {
         scroll-behavior: smooth;
       }
@@ -104,12 +127,16 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^2.3.0",
+    "gsap": "https://aistudiocdn.com/gsap@^3.12.5"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
