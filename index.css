@@ -96,3 +96,19 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+  .layered-text-root {
+    font-size: var(--md-font-size) !important;
+  }
+
+  .layered-text-item {
+    height: var(--md-height) !important;
+    transform: translateX(var(--md-translateX)) skew(var(--skew-x), -30deg) scaleY(var(--scale-y)) !important;
+  }
+
+  .layered-text-p {
+    height: var(--md-height) !important;
+    line-height: calc(var(--md-height) - 5px) !important;
+  }
+}

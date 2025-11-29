@@ -78,34 +78,40 @@ export function LayeredText({
   return (
     <div
       ref={containerRef}
-      className={`font-display font-black tracking-[-2px] uppercase text-white antialiased cursor-pointer ${className}`}
+      className={`layered-text-root font-display font-black tracking-[-2px] uppercase text-white antialiased cursor-pointer ${className}`}
       style={{ fontSize, "--md-font-size": fontSizeMd } as React.CSSProperties}
     >
       <ul className="list-none p-0 m-0 flex flex-col items-center">
         {lines.map((line, index) => {
           const translateX = calculateTranslateX(index)
+          const isEven = index % 2 === 0
+          const skewX = isEven ? "60deg" : "0deg"
+          const scaleY = isEven ? "0.66667" : "1.33333"
+
           return (
             <li
               key={index}
               className={`
+                layered-text-item
                 overflow-hidden relative
-                ${
-                  index % 2 === 0
-                    ? "[transform:skew(60deg,-30deg)_scaleY(0.66667)]"
-                    : "[transform:skew(0deg,-30deg)_scaleY(1.33333)]"
+                ${isEven
+                  ? "[transform:skew(60deg,-30deg)_scaleY(0.66667)]"
+                  : "[transform:skew(0deg,-30deg)_scaleY(1.33333)]"
                 }
               `}
               style={
                 {
                   height: `${lineHeight}px`,
-                  transform: `translateX(${translateX.desktop}px) skew(${index % 2 === 0 ? "60deg, -30deg" : "0deg, -30deg"}) scaleY(${index % 2 === 0 ? "0.66667" : "1.33333"})`,
+                  transform: `translateX(${translateX.desktop}px) skew(${skewX}, -30deg) scaleY(${scaleY})`,
                   "--md-height": `${lineHeightMd}px`,
                   "--md-translateX": `${translateX.mobile}px`,
+                  "--skew-x": skewX,
+                  "--scale-y": scaleY,
                 } as React.CSSProperties
               }
             >
               <p
-                className="leading-[55px] md:leading-[30px] px-[15px] align-top whitespace-nowrap m-0 text-white"
+                className="layered-text-p leading-[55px] md:leading-[30px] px-[15px] align-top whitespace-nowrap m-0 text-white"
                 style={
                   {
                     height: `${lineHeight}px`,
@@ -116,7 +122,7 @@ export function LayeredText({
                 {line.top}
               </p>
               <p
-                className="leading-[55px] md:leading-[30px] px-[15px] align-top whitespace-nowrap m-0 text-brand-accent"
+                className="layered-text-p leading-[55px] md:leading-[30px] px-[15px] align-top whitespace-nowrap m-0 text-brand-accent"
                 style={
                   {
                     height: `${lineHeight}px`,
