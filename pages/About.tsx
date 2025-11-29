@@ -59,7 +59,7 @@ const About: React.FC = () => {
                 <div className="flex flex-col lg:flex-row gap-20">
                     {/* Sticky Sidebar - Representative Info */}
                     <div className="lg:w-1/3">
-                        <div className="sticky top-32">
+                        <div className="sticky top-32 max-w-[280px] md:max-w-sm lg:max-w-none mx-auto lg:mx-0">
                             <div className="aspect-[3/4] overflow-hidden mb-6 relative group border border-white/10 rounded-sm">
                                 {/* Representative Profile Photo */}
                                 <img
