@@ -55,12 +55,12 @@ const About: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
             </div>
 
-            <div className="container mx-auto px-6 py-24">
-                <div className="flex flex-col lg:flex-row gap-20">
+            <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+                <div className="flex flex-row gap-4 md:gap-10 lg:gap-20 items-start">
                     {/* Sticky Sidebar - Representative Info */}
-                    <div className="lg:w-1/3">
-                        <div className="sticky top-32 max-w-[280px] md:max-w-sm lg:max-w-none mx-auto lg:mx-0">
-                            <div className="aspect-[3/4] overflow-hidden mb-6 relative group border border-white/10 rounded-sm">
+                    <div className="w-[35%] md:w-1/3 lg:w-1/3 flex-shrink-0">
+                        <div className="sticky top-24 md:top-32 w-full">
+                            <div className="aspect-[3/4] overflow-hidden mb-3 md:mb-6 relative group border border-white/10 rounded-sm">
                                 {/* Representative Profile Photo */}
                                 <img
                                     src="/User-Value-Inc/images/profile.jpg"
@@ -70,21 +70,21 @@ const About: React.FC = () => {
                                 />
 
                                 {/* Badge */}
-                                <div className="absolute bottom-4 left-4">
-                                    <div className="bg-black/50 backdrop-blur-md px-3 py-1 text-xs font-mono border border-white/10 text-white">
+                                <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4">
+                                    <div className="bg-black/50 backdrop-blur-md px-2 py-0.5 md:px-3 md:py-1 text-[8px] md:text-xs font-mono border border-white/10 text-white whitespace-nowrap">
                                         CEO / DIRECTOR / DESIGNER
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <p className="font-display font-bold text-2xl mb-1 text-white">{COMPANY_INFO.representative}</p>
-                                <p className="font-mono text-xs text-gray-500 uppercase tracking-widest">Representative Director</p>
+                                <p className="font-display font-bold text-sm md:text-2xl mb-1 text-white">{COMPANY_INFO.representative}</p>
+                                <p className="font-mono text-[8px] md:text-xs text-gray-500 uppercase tracking-widest">Representative Director</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Content */}
-                    <div className="lg:w-2/3 lg:pl-10">
+                    <div className="w-[65%] md:w-2/3 lg:w-2/3 lg:pl-10">
                         <div className="space-y-24">
                             <section>
                                 <span className="font-mono text-brand-accent text-sm tracking-widest block mb-6">// 01 — IDENTITY</span>
