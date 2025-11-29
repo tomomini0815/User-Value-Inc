@@ -95,8 +95,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </section>
 
             {/* Works Section - Structural Horizontal Scroll */}
-            <section ref={scrollRef} className="h-[300vh] relative bg-[#050505] border-b border-white/20">
-                <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
+            <section ref={scrollRef} className="h-auto md:h-[300vh] relative bg-[#050505] border-b border-white/20">
+                <div className="relative md:sticky md:top-0 h-auto md:h-screen overflow-hidden flex flex-col">
 
                     {/* Header for Works */}
                     <div className="border-b border-white/20 bg-[#050505] z-20">
@@ -106,7 +106,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                         </div>
                     </div>
 
-                    <div className="flex-grow flex items-center relative">
+                    <div className="flex-grow flex flex-col md:flex-row items-stretch md:items-center relative">
                         {/* Structural Grid Background in Scroll Area */}
                         <div
                             className="absolute inset-0 z-0 pointer-events-none opacity-10"
@@ -116,14 +116,68 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                             }}
                         />
 
-                        <motion.div style={{ x: xTransform }} className="flex h-full items-center pl-12 gap-0">
+                        {/* Mobile Layout (Vertical Stack) */}
+                        <div className="flex flex-col md:hidden w-full">
                             {PROJECTS.map((project, index) => (
                                 <a
                                     key={project.id}
                                     href={project.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="shrink-0 w-[70vw] md:w-[45vw] h-full border-r border-white/20 bg-[#050505] relative group flex flex-col"
+                                    className="w-full aspect-[4/5] border-b border-white/20 bg-[#050505] relative group flex flex-col overflow-hidden"
+                                >
+                                    {/* Background Image */}
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-all duration-500"
+                                    />
+
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"></div>
+
+                                    {/* Content Overlay */}
+                                    <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                                        <div className="flex justify-between items-start mb-auto">
+                                            <span className="font-mono text-brand-accent text-sm">0{index + 1}</span>
+                                            <div className="flex gap-2">
+                                                {project.tags.slice(0, 2).map(tag => (
+                                                    <span key={tag} className="text-[10px] uppercase border border-white/20 bg-black/30 backdrop-blur-sm px-2 py-1 text-gray-300">
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <h3 className="font-display text-4xl font-bold uppercase mb-2 text-white">{project.title}</h3>
+                                        <p className="font-mono text-xs uppercase tracking-wider text-brand-accent mb-3">{project.description}</p>
+                                        <p className="font-sans text-sm leading-relaxed text-gray-300 line-clamp-3">
+                                            {project.longDescription}
+                                        </p>
+                                    </div>
+                                </a>
+                            ))}
+                            {/* View All Mobile */}
+                            <div
+                                onClick={() => onNavigate('services')}
+                                className="w-full py-12 border-b border-white/20 flex items-center justify-center cursor-pointer hover:bg-white/5 transition-colors"
+                            >
+                                <div className="flex items-center gap-4 group">
+                                    <span className="font-display text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">VIEW ALL SERVICES</span>
+                                    <ArrowRight className="text-white group-hover:translate-x-2 transition-transform duration-300" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Desktop Layout (Horizontal Scroll) */}
+                        <motion.div style={{ x: xTransform }} className="hidden md:flex h-full items-center pl-12 gap-0">
+                            {PROJECTS.map((project, index) => (
+                                <a
+                                    key={project.id}
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="shrink-0 w-[45vw] h-full border-r border-white/20 bg-[#050505] relative group flex flex-col"
                                 >
                                     {/* Top Info */}
                                     <div className="p-6 border-b border-white/20 flex justify-between items-start bg-[#050505] z-10">
@@ -163,7 +217,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                 </a>
                             ))}
 
-                            {/* View All */}
+                            {/* View All Desktop */}
                             <div
                                 onClick={() => onNavigate('services')}
                                 className="shrink-0 w-[20vw] h-full border-r border-white/20 flex items-center justify-center cursor-pointer hover:bg-white/5 transition-colors"
