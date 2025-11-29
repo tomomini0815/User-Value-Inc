@@ -8,7 +8,7 @@ const About: React.FC = () => {
         <div className="bg-brand-black min-h-screen">
             {/* Intro Header */}
             <div className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 container mx-auto">
-                <div className="flex flex-col md:flex-row items-end justify-between border-b border-white/10 pb-10 md:pb-12">
+                <div className="flex flex-col items-start border-b border-white/10 pb-10 md:pb-12">
                     <div>
                         <motion.h1
                             initial={{ opacity: 0, y: 50 }}
@@ -22,7 +22,7 @@ const About: React.FC = () => {
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                            className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.9] tracking-tighter"
+                            className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.9] tracking-tighter mb-6 md:mb-8"
                         >
                             VISIONARY <span className="text-gray-600">&</span> <br />
                             CRAFTSMANSHIP.
@@ -32,7 +32,7 @@ const About: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="max-w-md mt-6 md:mt-0"
+                        className="max-w-xl"
                     >
                         <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
                             User Value Inc. is an elite digital product studio.
