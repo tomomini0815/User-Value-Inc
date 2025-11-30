@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                                         'アプリケーション開発',
                                         'UI/UXデザイン',
                                         'DXコンサルティング',
-                                        '採用について',
+                                        'お見積もりについて',
                                         'その他'
                                     ].map((type) => (
                                         <label key={type} className="flex items-center gap-3 p-4 border border-white/20 rounded hover:bg-white/5 cursor-pointer transition-all duration-300 group">
