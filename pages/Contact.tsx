@@ -23,14 +23,6 @@ const Contact: React.FC = () => {
                                     User Value Inc.は常に新しい挑戦を求めています。
                                     あなたのアイデアをお聞かせください。共に素晴らしいものを創りましょう。
                                 </p>
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">EMAIL</span>
-                                    <a href={`mailto:${COMPANY_INFO.email}`} className="text-xl md:text-2xl text-white hover:text-brand-accent transition-colors font-display break-all">{COMPANY_INFO.email}</a>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">PHONE</span>
-                                    <a href={`tel:${COMPANY_INFO.phone}`} className="text-xl md:text-2xl text-white hover:text-brand-accent transition-colors font-display">{COMPANY_INFO.phone}</a>
-                                </div>
                             </div>
                         </motion.div>
                     </div>
