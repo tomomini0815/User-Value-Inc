@@ -41,111 +41,122 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-xl backdrop-blur-sm border border-white/5"
                     >
-                        <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-                            {/* Inquiry Type */}
-                            <div className="group relative">
-                                <select
-                                    required
-                                    className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer text-white appearance-none rounded-none"
-                                >
-                                    <option value="" disabled selected className="bg-brand-black text-gray-500">お問い合わせ種別を選択してください</option>
-                                    <option value="web" className="bg-brand-black">Web制作・リニューアル</option>
-                                    <option value="app" className="bg-brand-black">アプリケーション開発</option>
-                                    <option value="uiux" className="bg-brand-black">UI/UXデザイン</option>
-                                    <option value="consulting" className="bg-brand-black">DXコンサルティング</option>
-                                    <option value="other" className="bg-brand-black">その他</option>
-                                </select>
-                                <label className="absolute left-0 -top-6 text-xs text-brand-accent font-mono uppercase tracking-wider">
-                                    INQUIRY TYPE *
+                        <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+                            {/* Inquiry Type - Checkboxes */}
+                            <div>
+                                <label className="block text-sm font-bold mb-4 text-white">
+                                    お問い合わせ種別 <span className="text-brand-accent">*</span>
+                                    <span className="ml-4 text-xs font-normal text-gray-500">複数選択可</span>
                                 </label>
-                                <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    {[
+                                        'Web制作・リニューアル',
+                                        'アプリケーション開発',
+                                        'UI/UXデザイン',
+                                        'DXコンサルティング',
+                                        '採用について',
+                                        'その他'
+                                    ].map((type) => (
+                                        <label key={type} className="flex items-center gap-3 p-4 border border-white/20 rounded hover:bg-white/5 cursor-pointer transition-all duration-300 group">
+                                            <input
+                                                type="checkbox"
+                                                name="inquiry_type"
+                                                value={type}
+                                                className="w-4 h-4 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent"
+                                            />
+                                            <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{type}</span>
+                                        </label>
+                                    ))}
                                 </div>
                             </div>
 
                             {/* Company & Name */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="group relative">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-sm font-bold mb-2 text-white">
+                                        会社名 <span className="text-brand-accent">*</span>
+                                    </label>
                                     <input
                                         type="text"
                                         required
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent"
-                                        placeholder="会社名"
+                                        className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
+                                        placeholder="例）株式会社User Value"
                                     />
-                                    <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                        COMPANY NAME *
-                                    </label>
                                 </div>
-                                <div className="group relative">
+                                <div>
+                                    <label className="block text-sm font-bold mb-2 text-white">
+                                        お名前 <span className="text-brand-accent">*</span>
+                                    </label>
                                     <input
                                         type="text"
                                         required
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent"
-                                        placeholder="お名前"
+                                        className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
+                                        placeholder="例）山田 太郎"
                                     />
-                                    <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                        YOUR NAME *
-                                    </label>
                                 </div>
                             </div>
 
                             {/* Email & Phone */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="group relative">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-sm font-bold mb-2 text-white">
+                                        メールアドレス <span className="text-brand-accent">*</span>
+                                    </label>
                                     <input
                                         type="email"
                                         required
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent"
-                                        placeholder="メールアドレス"
+                                        className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
+                                        placeholder="例）info@uservalue.co.jp"
                                     />
-                                    <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                        EMAIL ADDRESS *
-                                    </label>
                                 </div>
-                                <div className="group relative">
+                                <div>
+                                    <label className="block text-sm font-bold mb-2 text-white">
+                                        電話番号
+                                    </label>
                                     <input
                                         type="tel"
-                                        className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent"
-                                        placeholder="電話番号"
+                                        className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
+                                        placeholder="例）03-1234-5678"
                                     />
-                                    <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                        PHONE NUMBER
-                                    </label>
                                 </div>
                             </div>
 
                             {/* Message */}
-                            <div className="group relative">
-                                <textarea
-                                    rows={4}
-                                    required
-                                    className="w-full bg-transparent border-b border-white/20 py-4 text-base md:text-lg focus:outline-none focus:border-brand-accent transition-all duration-300 peer placeholder-transparent resize-none min-h-[120px]"
-                                    placeholder="お問い合わせ内容"
-                                />
-                                <label className="absolute left-0 top-4 text-gray-500 transition-all duration-300 peer-focus:-top-6 peer-focus:text-xs peer-focus:text-brand-accent peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs cursor-text font-mono uppercase tracking-wider text-xs">
-                                    MESSAGE *
+                            <div>
+                                <label className="block text-sm font-bold mb-2 text-white">
+                                    お問い合わせ内容 <span className="text-brand-accent">*</span>
                                 </label>
+                                <textarea
+                                    rows={6}
+                                    required
+                                    className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600 resize-none"
+                                    placeholder="ご相談内容やご質問などをご記入ください"
+                                />
                             </div>
 
                             {/* Privacy Policy Agreement */}
-                            <div className="flex items-start gap-3 pt-4">
-                                <input
-                                    type="checkbox"
-                                    id="privacy"
-                                    required
-                                    className="mt-1 w-4 h-4 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent"
-                                />
-                                <label htmlFor="privacy" className="text-sm text-gray-400 leading-relaxed">
-                                    <a href="/User-Value-Inc/privacy" target="_blank" className="text-white underline hover:text-brand-accent transition-colors">プライバシーポリシー</a>
-                                    に同意の上、送信してください。
-                                    <br />
-                                    <span className="text-xs text-gray-500">ご入力いただいた個人情報は、お問い合わせへの回答のみに利用いたします。</span>
-                                </label>
+                            <div className="p-6 bg-white/5 border border-white/10 rounded">
+                                <div className="flex items-start gap-4">
+                                    <input
+                                        type="checkbox"
+                                        id="privacy"
+                                        required
+                                        className="mt-1 w-5 h-5 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent cursor-pointer"
+                                    />
+                                    <label htmlFor="privacy" className="text-sm text-gray-400 leading-relaxed cursor-pointer">
+                                        <a href="/User-Value-Inc/privacy" target="_blank" className="text-white font-bold underline hover:text-brand-accent transition-colors">プライバシーポリシー</a>
+                                        に同意の上、送信してください。
+                                        <br />
+                                        <span className="text-xs text-gray-500 block mt-1">
+                                            ※ご入力いただいた個人情報は、お問い合わせへの回答および対応上必要な手続きにのみ利用いたします。
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full py-5 bg-white text-black font-bold uppercase tracking-widest text-sm md:text-base hover:bg-brand-accent hover:text-white transition-all duration-300 min-h-[56px] mt-4"
+                                className="w-full py-5 bg-white text-black font-bold text-lg hover:bg-brand-accent hover:text-white transition-all duration-300 rounded shadow-lg hover:shadow-brand-accent/20"
                             >
                                 同意して送信する
                             </button>
