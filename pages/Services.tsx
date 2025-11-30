@@ -64,8 +64,8 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                         </span>
                                     ))}
                                 </div>
-                                <button className="flex items-center gap-2 text-white text-xs md:text-sm font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform min-h-[44px]">
-                                    View Capability <ArrowUpRight className="w-4 h-4" />
+                                <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all duration-300 group-hover:translate-x-2">
+                                    View Workflow <ArrowUpRight className="w-4 h-4" />
                                 </button>
                             </div>
                         </div>
