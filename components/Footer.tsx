@@ -53,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                         </p>
                     </div>
                     <div className="flex gap-8 text-xs text-gray-500 font-mono uppercase tracking-wider">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
                         <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
                         <span>© {new Date().getFullYear()} User Value Inc.</span>
                     </div>
