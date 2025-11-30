@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="flex flex-col md:flex-row justify-between items-end border-t border-white/10 pt-8 mt-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-white/10 pt-8 mt-12">
                     <div className="mb-6 md:mb-0">
                         <h3 className="text-4xl font-display font-bold mb-2">{COMPANY_INFO.nameEn}</h3>
                         <p className="text-xs text-gray-500 uppercase tracking-widest font-mono">
@@ -54,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     </div>
                     <div className="flex gap-8 text-xs text-gray-500 font-mono uppercase tracking-wider">
                         <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <button onClick={() => onNavigate('services')} className="hover:text-white transition-colors">Service</button>
                         <span>© {new Date().getFullYear()} User Value Inc.</span>
                     </div>
                 </div>
