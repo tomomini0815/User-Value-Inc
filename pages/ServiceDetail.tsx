@@ -16,12 +16,29 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavigate }) 
         return <div>Service not found</div>;
     }
 
+    const handleBackClick = () => {
+        // Determine which section to scroll to based on service ID
+        const isAIService = serviceId.startsWith('service_ai_');
+        const sectionId = isAIService ? 'ai-driven-development' : 'digital-solutions';
+
+        // Navigate back to services page
+        onNavigate('services');
+
+        // Scroll to the appropriate section after a short delay
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
+    };
+
     return (
         <div className="min-h-screen bg-[#050505] pt-32 pb-24">
             <div className="container mx-auto px-6">
                 {/* Back Button */}
                 <button
-                    onClick={() => onNavigate('services')}
+                    onClick={handleBackClick}
                     className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors mb-12 group"
                 >
                     <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />

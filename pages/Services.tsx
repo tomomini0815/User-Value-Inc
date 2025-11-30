@@ -41,7 +41,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 border-b border-white/20">
+                <div id="digital-solutions" className="grid grid-cols-1 md:grid-cols-2 border-b border-white/20">
                     {SERVICES.map((service, index) => (
                         <div
                             key={service.id}
@@ -92,7 +92,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* AI Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b border-white/20">
+                <div id="ai-driven-development" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b border-white/20">
                     {AI_SERVICES.map((service, index) => (
                         <div
                             key={service.id}
