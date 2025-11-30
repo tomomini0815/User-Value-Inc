@@ -44,7 +44,7 @@ export interface ProjectItem {
 /**
  * Valid page identifiers for routing.
  */
-export type PageId = 'home' | 'services' | 'about' | 'contact' | 'privacy';
+export type PageId = 'home' | 'services' | 'about' | 'contact' | 'privacy' | 'service_web' | 'service_app' | 'service_uiux' | 'service_saas';
 
 /**
  * Navigation item structure for Header/Menu.

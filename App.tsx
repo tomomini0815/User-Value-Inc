@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ServiceDetail from './pages/ServiceDetail';
 import { PageId } from './types';
 
 const App: React.FC = () => {
@@ -28,10 +29,14 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'home': return <Home onNavigate={setCurrentPage} />;
-      case 'services': return <Services />;
+      case 'services': return <Services onNavigate={setCurrentPage} />;
       case 'about': return <About />;
       case 'contact': return <Contact />;
       case 'privacy': return <PrivacyPolicy />;
+      case 'service_web': return <ServiceDetail serviceId="service_web" onNavigate={setCurrentPage} />;
+      case 'service_app': return <ServiceDetail serviceId="service_app" onNavigate={setCurrentPage} />;
+      case 'service_uiux': return <ServiceDetail serviceId="service_uiux" onNavigate={setCurrentPage} />;
+      case 'service_saas': return <ServiceDetail serviceId="service_saas" onNavigate={setCurrentPage} />;
       default: return <Home onNavigate={setCurrentPage} />;
     }
   };

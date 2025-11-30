@@ -3,7 +3,21 @@ import { motion } from 'framer-motion';
 import { SERVICES, PROJECTS } from '../constants';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 
-const Services: React.FC = () => {
+import { PageId } from '../types';
+
+interface ServicesProps {
+    onNavigate?: (page: PageId) => void;
+}
+
+const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
+    const handleServiceClick = (index: number) => {
+        if (!onNavigate) return;
+        const pageIds: PageId[] = ['service_web', 'service_app', 'service_uiux', 'service_saas'];
+        if (pageIds[index]) {
+            onNavigate(pageIds[index]);
+        }
+    };
+
     return (
         <div className="pt-32 pb-24 min-h-screen bg-[#050505]">
             <div className="container mx-auto border-x border-white/20">
@@ -23,8 +37,9 @@ const Services: React.FC = () => {
                     {SERVICES.map((service, index) => (
                         <div
                             key={service.id}
+                            onClick={() => handleServiceClick(index)}
                             className={`
-                        group relative border-b border-white/20 bg-[#050505] p-6 md:p-8 lg:p-12 flex flex-col justify-between min-h-[400px] hover:bg-white/5 transition-colors duration-500
+                        group relative border-b border-white/20 bg-[#050505] p-6 md:p-8 lg:p-12 flex flex-col justify-between min-h-[400px] hover:bg-white/5 transition-colors duration-500 cursor-pointer
                         ${index % 2 === 0 ? 'md:border-r' : ''}
                     `}
                         >

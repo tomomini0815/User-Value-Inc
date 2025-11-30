@@ -80,3 +80,152 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'about', label: "About", href: "/about" },
   { id: 'contact', label: "Contact", href: "/contact" },
 ];
+
+export interface ServiceFlowStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface ServiceDetailData {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  flow: ServiceFlowStep[];
+}
+
+export const SERVICE_DETAILS: Record<string, ServiceDetailData> = {
+  'service_web': {
+    id: 'service_web',
+    title: "Web App Development",
+    subtitle: "ビジネスを加速させる、堅牢でモダンなWebアプリケーション",
+    description: "単なるWebサイト制作ではなく、業務システムやSaaSプロダクトなど、複雑な機能を持つWebアプリケーションの開発を得意としています。ReactやNext.jsなどの最新技術を用い、高速で拡張性の高いシステムを構築します。",
+    flow: [
+      {
+        step: "01",
+        title: "ヒアリング・要件定義",
+        description: "プロジェクトの目的、ターゲット、解決したい課題を深く理解します。機能要件だけでなく、非機能要件（パフォーマンス、セキュリティ等）も含めた詳細な要件定義を行います。"
+      },
+      {
+        step: "02",
+        title: "設計・プロトタイピング",
+        description: "システムアーキテクチャの設計と、UI/UXデザインを行います。必要に応じてプロトタイプを作成し、開発前に完成イメージを共有・すり合わせを行います。"
+      },
+      {
+        step: "03",
+        title: "アジャイル開発",
+        description: "機能ごとに優先順位をつけ、スプリント単位で開発を進めます。定期的に成果物を確認いただきながら進めることで、認識のズレを防ぎます。"
+      },
+      {
+        step: "04",
+        title: "テスト・品質保証",
+        description: "単体テスト、結合テスト、E2Eテストを実施し、バグの少ない高品質なコードを保証します。セキュリティ診断やパフォーマンステストも実施可能です。"
+      },
+      {
+        step: "05",
+        title: "リリース・運用保守",
+        description: "本番環境へのデプロイを安全に行います。リリース後も、監視、障害対応、機能追加などの継続的なサポートを提供し、サービスの成長を支えます。"
+      }
+    ]
+  },
+  'service_app': {
+    id: 'service_app',
+    title: "Mobile App Production",
+    subtitle: "ユーザーの手のひらで最高の体験を届けるネイティブアプリ",
+    description: "iOS / Androidアプリの企画から開発、ストア申請までワンストップで対応します。Swift/Kotlinによるネイティブ開発はもちろん、Flutterを用いた効率的なクロスプラットフォーム開発も可能です。",
+    flow: [
+      {
+        step: "01",
+        title: "企画・コンセプト策定",
+        description: "アプリのコアとなる価値（バリュー）を明確にし、ターゲットユーザーに響くコンセプトを策定します。競合調査や市場分析も行います。"
+      },
+      {
+        step: "02",
+        title: "UI/UXデザイン",
+        description: "モバイル特有の操作性を考慮した、直感的で使いやすいUIを設計します。ユーザーの体験フロー（UX）を詳細に描き、デザインに落とし込みます。"
+      },
+      {
+        step: "03",
+        title: "アプリ開発",
+        description: "iOS/Androidそれぞれのプラットフォームに最適化された実装を行います。Flutterを採用することで、両OS同時開発による工数削減も可能です。"
+      },
+      {
+        step: "04",
+        title: "テスト・実機検証",
+        description: "様々な端末サイズやOSバージョンでの動作検証を入念に行います。クラッシュや表示崩れがないか、徹底的にチェックします。"
+      },
+      {
+        step: "05",
+        title: "ストア申請・リリース",
+        description: "App Store / Google Playへの申請手続きを代行・サポートします。審査リジェクト時の対応もお任せください。"
+      }
+    ]
+  },
+  'service_uiux': {
+    id: 'service_uiux',
+    title: "UI/UX Design & Audit",
+    description: "ユーザーの心を掴み、ビジネス成果に繋げるデザイン戦略",
+    subtitle: "見た目の美しさだけでなく、使いやすさとビジネスゴールを両立させるデザインを提供します。既存サービスのUI/UX診断や改善提案も行っています。",
+    flow: [
+      {
+        step: "01",
+        title: "リサーチ・現状分析",
+        description: "ユーザーインタビュー、ヒートマップ分析、競合調査などを通じて、現状の課題やユーザーのニーズを客観的なデータに基づいて洗い出します。"
+      },
+      {
+        step: "02",
+        title: "情報設計・ワイヤーフレーム",
+        description: "ユーザーが迷わず目的を達成できるよう、画面遷移や情報構造を整理します。ワイヤーフレームを作成し、骨組みを固めます。"
+      },
+      {
+        step: "03",
+        title: "ビジュアルデザイン",
+        description: "ブランドの世界観を体現するトーン＆マナーを策定し、高品質なUIデザインを作成します。配色、タイポグラフィ、アイコンなどを細部まで作り込みます。"
+      },
+      {
+        step: "04",
+        title: "プロトタイピング・検証",
+        description: "実際のアプリのように動くプロトタイプを作成し、操作感を検証します。ユーザーテストを実施し、フィードバックを元に改善を繰り返します。"
+      },
+      {
+        step: "05",
+        title: "ガイドライン作成・納品",
+        description: "デザインデータと共に、デザインシステムやスタイルガイドを作成・納品します。開発チームへの引き継ぎや、将来的な運用もスムーズに行えます。"
+      }
+    ]
+  },
+  'service_saas': {
+    id: 'service_saas',
+    title: "SaaS Product Design",
+    subtitle: "複雑な業務をシンプルに。選ばれ続けるSaaSプロダクトへ",
+    description: "B2B SaaS特有の複雑な業務フローを整理し、誰でも直感的に使えるプロダクトデザインを実現します。MVP開発からPMF後のグロースまで、フェーズに合わせた支援を行います。",
+    flow: [
+      {
+        step: "01",
+        title: "業務理解・課題抽出",
+        description: "対象となる業界や業務フローを深く理解することから始めます。ユーザーが抱えるペインポイント（悩み）を特定し、解決策を模索します。"
+      },
+      {
+        step: "02",
+        title: "MVP要件定義",
+        description: "最初から多機能にするのではなく、コアとなる価値を提供するために必要な最小限の機能（MVP）を定義し、素早い市場投入を目指します。"
+      },
+      {
+        step: "03",
+        title: "UI設計・開発",
+        description: "管理画面やダッシュボードなど、情報量の多い画面でも見やすく、操作しやすいUIを設計・開発します。拡張性を考慮したコンポーネント設計を行います。"
+      },
+      {
+        step: "04",
+        title: "オンボーディング設計",
+        description: "ユーザーが迷わず使い始められるよう、チュートリアルやヘルプなどのオンボーディング体験を設計します。定着率（リテンション）向上に寄与します。"
+      },
+      {
+        step: "05",
+        title: "ユーザーテスト・改善サイクル",
+        description: "リリース後もユーザーの利用状況を分析し、UI/UXの改善を継続的に行います。機能追加や改修を繰り返し、プロダクトを成長させます。"
+      }
+    ]
+  }
+};
