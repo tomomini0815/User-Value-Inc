@@ -227,5 +227,131 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailData> = {
         description: "リリース後もユーザーの利用状況を分析し、UI/UXの改善を継続的に行います。機能追加や改修を繰り返し、プロダクトを成長させます。"
       }
     ]
+  },
+  'service_ai_web': {
+    id: 'service_ai_web',
+    title: "AI Web App Development",
+    subtitle: "AIエージェントが加速させる、次世代のWeb開発プロセス",
+    description: "要件定義からコーディング、テストまでをAIエージェントが自律的に実行。従来の開発期間を劇的に短縮し、圧倒的なスピードとコストパフォーマンスで高品質なWebアプリケーションを提供します。",
+    flow: [
+      {
+        step: "01",
+        title: "AI要件定義 & アーキテクチャ設計",
+        description: "対話型AIがヒアリングを行い、仕様書（PRD）と最適な技術選定、DB設計図を即座に自動生成します。"
+      },
+      {
+        step: "02",
+        title: "マルチエージェント・コーディング",
+        description: "フロントエンド、バックエンド、DB担当の複数のAIエージェントが連携し、機能ごとに並行してコードを生成・実装します。"
+      },
+      {
+        step: "03",
+        title: "自動リファクタリング & セキュリティ診断",
+        description: "生成されたコードに対し、別のAIがセキュリティ脆弱性のチェックと、パフォーマンス最適化のためのリファクタリングを行います。"
+      },
+      {
+        step: "04",
+        title: "AI自動テスト & バグ修正",
+        description: "テストケースの作成から実行までをAIが担当。エラーが出た場合も、AIがログを解析して修正パッチを自動で適用します。"
+      },
+      {
+        step: "05",
+        title: "自動デプロイ & 自律運用",
+        description: "完成したアプリケーションをクラウドへ自動デプロイ。運用中もAIがサーバー負荷を監視し、自動でスケーリングや障害対応を行います。"
+      }
+    ]
+  },
+  'service_ai_app': {
+    id: 'service_ai_app',
+    title: "AI Mobile App Production",
+    subtitle: "クロスプラットフォーム開発の常識を覆す、AIによる高速実装",
+    description: "iOS/Androidの両OS対応アプリを、AIが高速に構築。トレンド分析からUI生成、実装、ストア申請までをAIが強力にサポートし、ビジネスの立ち上げを加速させます。",
+    flow: [
+      {
+        step: "01",
+        title: "トレンド分析 & コンセプト生成",
+        description: "AIが市場のトレンドや競合アプリを分析し、「売れる」アプリのコンセプトや機能を提案。ユーザーペルソナも自動生成します。"
+      },
+      {
+        step: "02",
+        title: "UI/アセット自動生成",
+        description: "テキストでの指示（プロンプト）から、アプリ画面のデザインや、アイコン・画像素材をAIが生成します。"
+      },
+      {
+        step: "03",
+        title: "クロスプラットフォーム開発",
+        description: "FlutterやReact Nativeを用い、AIが単一のコードベースからiOSとAndroid両方のアプリを同時に構築します。"
+      },
+      {
+        step: "04",
+        title: "クラウド実機テスト",
+        description: "クラウド上の数百種類の端末で、AIが自動操作テストを実施。画面崩れやクラッシュを検知し、レポート化します。"
+      },
+      {
+        step: "05",
+        title: "ASO（ストア最適化） & 申請",
+        description: "App Store/Google Play向けの紹介文、キーワード、スクリーンショットをAIが最適化。審査ガイドラインへの適合チェックも行います。"
+      }
+    ]
+  },
+  'service_ai_saas': {
+    id: 'service_ai_saas',
+    title: "AI SaaS Product Design",
+    subtitle: "部品の組み合わせで創る、AI時代のSaaS構築",
+    description: "複雑な業務システムやSaaSを、AIが「部品の組み合わせ」で高速構築。PMF（市場適合）までの検証サイクルを回し、データに基づいた改善を自動化します。",
+    flow: [
+      {
+        step: "01",
+        title: "課題抽出 & ソリューション探索",
+        description: "膨大な業界データやレビューをAIが分析し、ユーザーの深い悩み（ペインポイント）を特定。解決策となる機能セットを導き出します。"
+      },
+      {
+        step: "02",
+        title: "データモデル & API自動設計",
+        description: "複雑な業務フローをAIが構造化し、拡張性の高いデータベース設計とAPI仕様書（OpenAPI）を自動生成します。"
+      },
+      {
+        step: "03",
+        title: "MVP高速構築 (Boilerplate)",
+        description: "認証、決済、管理画面などのSaaS共通機能は、AIが既存の高品質なテンプレートを用いて一瞬で用意。コア機能の開発に集中します。"
+      },
+      {
+        step: "04",
+        title: "ユーザー行動予測 & AI改善",
+        description: "リリース後のユーザー行動をAIがシミュレーション・分析し、離脱要因を特定。UIや機能の改善案を自動で提示します。"
+      },
+      {
+        step: "05",
+        title: "カスタマーサクセス自動化",
+        description: "操作マニュアル、FAQ、チュートリアル動画などをAIが自動生成。ユーザーからの問い合わせ対応もAIボットが一次対応します。"
+      }
+    ]
   }
 };
+
+export const AI_SERVICES: ServiceItem[] = [
+  {
+    id: 'ai1',
+    title: "AI Web App Development",
+    description: "AIエージェントによる自律的なコーディングとテストで、開発スピードを最大化。要件定義からデプロイまでを高速に実行します。",
+    icon: Zap,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop",
+    tags: ["AI Agents", "Auto-Code", "Self-Healing"]
+  },
+  {
+    id: 'ai2',
+    title: "AI Mobile App Production",
+    description: "クロスプラットフォーム開発をAIが加速。UI生成からストア申請まで、モバイルアプリ開発の全工程をAIがサポートします。",
+    icon: Smartphone,
+    image: "https://images.unsplash.com/photo-1664575602554-208c7a77ee71?q=80&w=2667&auto=format&fit=crop",
+    tags: ["Flutter", "AI UI Gen", "Auto-Test"]
+  },
+  {
+    id: 'ai3',
+    title: "AI SaaS Product Design",
+    description: "データドリブンな課題発見と、AIによる高速なMVP構築。PMFへの最短ルートを提示し、プロダクトの成長を自動化します。",
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
+    tags: ["Data Driven", "Auto-API", "Growth AI"]
+  }
+];

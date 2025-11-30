@@ -37,6 +37,9 @@ const App: React.FC = () => {
       case 'service_app': return <ServiceDetail serviceId="service_app" onNavigate={setCurrentPage} />;
       case 'service_uiux': return <ServiceDetail serviceId="service_uiux" onNavigate={setCurrentPage} />;
       case 'service_saas': return <ServiceDetail serviceId="service_saas" onNavigate={setCurrentPage} />;
+      case 'service_ai_web': return <ServiceDetail serviceId="service_ai_web" onNavigate={setCurrentPage} />;
+      case 'service_ai_app': return <ServiceDetail serviceId="service_ai_app" onNavigate={setCurrentPage} />;
+      case 'service_ai_saas': return <ServiceDetail serviceId="service_ai_saas" onNavigate={setCurrentPage} />;
       default: return <Home onNavigate={setCurrentPage} />;
     }
   };
