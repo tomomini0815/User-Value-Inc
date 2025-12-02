@@ -55,20 +55,21 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: 'p1',
     title: "Journify",
-    description: "AI Travel Journal Platform",
-    longDescription: "旅の記憶を、美しい物語へ。AIが位置情報と写真を解析し、あなたの旅程を自動でスタイリッシュなジャーナルに変換。思い出を整理する手間なく、感動的なトラベルストーリーが完成します。地図上で旅の軌跡を可視化し、大切な瞬間を永遠に刻む次世代プラットフォーム。",
-    // Travel app interface with map
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-    url: "https://tomomini0815.github.io/Journify-v1",
+    description: "自己管理Webアプリケーション",
+    longDescription: "Journifyは、「書く」「振り返る」「達成する」を一つにつなげる次世代の自己管理Webアプリケーションです。\n\n日々の記録と目標管理を統合し、あなたの成長を可視化するパーソナルダッシュボード。ジャーナリング（日記）で思考を整理し、目標設定で方向性を定め、タスク管理で着実に前進し、プロジェクト管理で大きな成果を実現できます。",
+    // Journify dashboard screenshot
+    image: "/User-Value-Inc/images/journify-new-mockup.jpg",
+    imageClassName: "scale-110 object-center",
+    url: "https://journify-v1.vercel.app/",
     tags: ["Travel Tech", "AI Generation", "Map Integration"]
   },
   {
     id: 'p2',
     title: "Ainance",
-    description: "AI Financial Dashboard",
-    longDescription: "お金の未来を、もっとスマートに。AIが市場動向を予測し、あなたの資産状況を一目で把握できるインテリジェントな金融ダッシュボード。複雑な財務データを美しいビジュアルで整理し、賢い意思決定をサポート。個人から企業まで、誰もが使える次世代フィンテックツール。",
-    // Financial charts and accounting interface
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    description: "経理業務効率化Webアプリケーション",
+    longDescription: "Ainanceは、個人事業主・フリーランス・小規模事業者のための経理業務効率化Webアプリケーションです。\n\nレシートのOCR自動読み取り、音声入力による取引記録、収支の可視化、確定申告サポートなど、日々の経理作業に欠かせない機能を一つのプラットフォームで提供。煩雑な会計業務をシンプルに、もっとスマートに管理できます。",
+    // Ainance dashboard screenshot
+    image: "/User-Value-Inc/images/ainance-mockup.png",
     url: "https://tomomini0815.github.io/ainance-v2",
     tags: ["Fintech", "Predictive AI", "Data Viz"]
   }

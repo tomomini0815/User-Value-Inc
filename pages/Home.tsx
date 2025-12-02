@@ -5,6 +5,7 @@ import { PageId } from '../types';
 import { PROJECTS } from '../constants';
 import Hero from '../components/Hero';
 import Mission from '../components/Mission';
+import { DeviceMockup } from '../components/ui/device-mockup';
 
 interface HomeProps {
     onNavigate: (page: PageId) => void;
@@ -126,15 +127,19 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                     rel="noopener noreferrer"
                                     className="w-full aspect-[4/5] border-b border-white/20 bg-[#050505] relative group flex flex-col overflow-hidden"
                                 >
-                                    {/* Background Image */}
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-all duration-500"
-                                    />
+                                    {/* Background Image / Device Mockup */}
+                                    <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#050505]">
+                                        <DeviceMockup
+                                            desktopImage={project.desktopImage}
+                                            mobileImage={project.mobileImage}
+                                            fallbackImage={project.image}
+                                            alt={project.title}
+                                            imageClassName={project.imageClassName}
+                                        />
+                                    </div>
 
                                     {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-transparent to-transparent"></div>
 
                                     {/* Content Overlay */}
                                     <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
@@ -193,17 +198,19 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
                                     {/* Image Area with Overlay Description */}
                                     <div className="flex-grow relative overflow-hidden">
-                                        {/* Background Image */}
-                                        <motion.img
-                                            whileHover={{ scale: 1.05 }}
-                                            transition={{ duration: 0.5 }}
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-30 transition-all duration-500"
-                                        />
+                                        {/* Background Image / Device Mockup */}
+                                        <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#050505] p-8">
+                                            <DeviceMockup
+                                                desktopImage={project.desktopImage}
+                                                mobileImage={project.mobileImage}
+                                                fallbackImage={project.image}
+                                                alt={project.title}
+                                                imageClassName={project.imageClassName}
+                                            />
+                                        </div>
 
                                         {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/10 to-transparent"></div>
 
                                         {/* Content Overlay */}
                                         <div className="absolute inset-0 p-8 flex flex-col justify-end">

@@ -37,6 +37,9 @@ export interface ProjectItem {
   description: string; // Short description for cards
   longDescription: string; // Longer description for details
   image: string; // URL to the product screenshot/mockup
+  desktopImage?: string; // Optional: URL for desktop view in mockup
+  mobileImage?: string; // Optional: URL for mobile view in mockup
+  imageClassName?: string; // Optional: Tailwind classes for image positioning/scaling
   url: string; // External link to the live project/demo
   tags: string[]; // Key features or technologies
 }

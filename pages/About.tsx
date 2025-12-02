@@ -63,7 +63,7 @@ const About: React.FC = () => {
                             <div className="aspect-[3/4] overflow-hidden mb-6 relative group border border-white/10 rounded-sm">
                                 {/* Representative Profile Photo */}
                                 <img
-                                    src="/User-Value-Inc/images/profile.jpg"
+                                    src="/User-Value-Inc/images/tomomi-era.jpg"
                                     alt="Representative Director - Tomomi Era"
                                     className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
                                     style={{ objectPosition: 'center 20%' }}

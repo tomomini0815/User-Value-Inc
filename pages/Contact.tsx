@@ -5,21 +5,21 @@ import { COMPANY_INFO } from '../constants';
 const Contact: React.FC = () => {
     return (
         <div className="min-h-screen bg-brand-black pt-32 pb-20 px-6 flex flex-col justify-center">
-            <div className="container mx-auto max-w-6xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div className="container mx-auto max-w-3xl">
+                <div className="space-y-12">
                     <div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                        >
+                            className="text-center">
                             <p className="font-serif italic text-xl md:text-2xl text-gray-400 mb-3 md:mb-4">Get in touch</p>
-                            <h1 className="font-display text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-10 md:mb-12">
+                            <h1 className="font-display text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-6 md:mb-8">
                                 LET'S START A <br />
                                 PROJECT.
                             </h1>
                             <div className="space-y-6 md:space-y-8 text-lg">
-                                <p className="text-gray-400 max-w-md text-base md:text-lg leading-relaxed">
+                                <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                                     User Value Inc.は常に新しい挑戦を求めています。
                                     あなたのアイデアをお聞かせください。共に素晴らしいものを創りましょう。
                                 </p>
@@ -28,9 +28,9 @@ const Contact: React.FC = () => {
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
                         className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-xl backdrop-blur-sm border border-white/5"
                     >
                         <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
