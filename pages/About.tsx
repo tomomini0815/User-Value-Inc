@@ -70,7 +70,7 @@ const About: React.FC = () => {
                                 <img
                                     src={getImagePath("/images/tomomi-era.jpg")}
                                     alt="Representative Director - Tomomi Era"
-                                    className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-[center_20%] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                     style={{ objectPosition: 'center 20%' }}
                                 />
 
