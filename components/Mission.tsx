@@ -22,11 +22,14 @@ const Mission: React.FC = () => {
                         >
                             <p className="font-mono text-sm text-brand-accent mb-6 flex items-center gap-2">
                                 <span className="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-                                // OUR PROMISE
+                                // OUR PROMISE <span className="text-brand-accent/60 ml-2 text-xs">私たちの約束</span>
                             </p>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
                                 Bringing your ideas to life with <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">technology that feels human.</span>
                             </h2>
+                            <p className="text-white/60 text-sm md:text-base lg:text-lg font-light">
+                                あなたのアイデアを、体温のあるテクノロジーで現実に。
+                            </p>
                         </motion.div>
                     </div>
 
@@ -41,15 +44,23 @@ const Mission: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                             >
-                                <span className="font-mono text-xs text-white/50 group-hover:text-black/60 uppercase tracking-widest transition-colors duration-300">
-                                    Let's Talk
-                                </span>
+                                <div className="flex flex-col gap-1">
+                                    <span className="font-mono text-xs text-white/50 group-hover:text-black/60 uppercase tracking-widest transition-colors duration-300">
+                                        Let's Talk
+                                    </span>
+                                    <span className="text-[10px] text-white/30 group-hover:text-black/40 transition-colors duration-300">
+                                        お問い合わせ
+                                    </span>
+                                </div>
                             </motion.div>
 
                             <div className="mt-8 w-full">
-                                <h3 className="font-display font-bold text-3xl md:text-4xl text-white group-hover:text-black mb-4 transition-colors duration-300 leading-tight">
+                                <h3 className="font-display font-bold text-3xl md:text-4xl text-white group-hover:text-black mb-2 transition-colors duration-300 leading-tight">
                                     Let's Create<br />Together
                                 </h3>
+                                <p className="text-sm text-white/60 group-hover:text-black/70 mb-6 transition-colors duration-300">
+                                    一緒に未来を創りましょう
+                                </p>
                                 <div className="flex items-center gap-4 text-brand-accent group-hover:text-black transition-colors duration-300">
                                     <span className="text-sm font-mono border-b border-current pb-0.5">Contact Us</span>
                                     <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
