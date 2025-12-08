@@ -1,5 +1,6 @@
 import { Layers, Smartphone, Monitor, Code, Zap, Globe, Cpu, Search } from 'lucide-react';
 import { CompanyInfo, ServiceItem, NavItem, ProjectItem } from './types';
+import { getImagePath } from './lib/utils';
 
 export const COMPANY_INFO: CompanyInfo & { email: string } = {
   name: "株式会社ユーザーバリュー",
@@ -58,7 +59,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "自己管理Webアプリケーション",
     longDescription: "Journifyは、「書く」「振り返る」「達成する」を一つにつなげる次世代の自己管理Webアプリケーションです。\n\n日々の記録と目標管理を統合し、あなたの成長を可視化するパーソナルダッシュボード。ジャーナリング（日記）で思考を整理し、目標設定で方向性を定め、タスク管理で着実に前進し、プロジェクト管理で大きな成果を実現できます。",
     // Journify dashboard screenshot
-    image: "/User-Value-Inc/images/journify-new-mockup.jpg",
+    image: getImagePath("/images/journify-new-mockup.jpg"),
     imageClassName: "scale-110 object-center",
     url: "https://journify-v1.vercel.app/",
     tags: ["Travel Tech", "AI Generation", "Map Integration"]
@@ -69,7 +70,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "経理業務効率化Webアプリケーション",
     longDescription: "Ainanceは、個人事業主・フリーランス・小規模事業者のための経理業務効率化Webアプリケーションです。\n\nレシートのOCR自動読み取り、音声入力による取引記録、収支の可視化、確定申告サポートなど、日々の経理作業に欠かせない機能を一つのプラットフォームで提供。煩雑な会計業務をシンプルに、もっとスマートに管理できます。",
     // Ainance dashboard screenshot
-    image: "/User-Value-Inc/images/ainance-mockup.png",
+    image: getImagePath("/images/ainance-mockup.png"),
     url: "https://tomomini0815.github.io/ainance-v2",
     tags: ["Fintech", "Predictive AI", "Data Viz"]
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { COMPANY_INFO } from '../constants';
 import { Cpu, Zap, Globe } from 'lucide-react';
+import { getImagePath } from '../lib/utils';
 
 const About: React.FC = () => {
     return (
@@ -52,7 +53,7 @@ const About: React.FC = () => {
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    src="/User-Value-Inc/images/about-hero.png"
+                    src={getImagePath("/images/about-hero.png")}
                     alt="Creative Studio Workspace"
                     className="w-full h-full object-cover opacity-60 filter grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
@@ -67,7 +68,7 @@ const About: React.FC = () => {
                             <div className="aspect-[3/4] overflow-hidden mb-6 relative group border border-white/10 rounded-sm">
                                 {/* Representative Profile Photo */}
                                 <img
-                                    src="/User-Value-Inc/images/tomomi-era.jpg"
+                                    src={getImagePath("/images/tomomi-era.jpg")}
                                     alt="Representative Director - Tomomi Era"
                                     className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700"
                                     style={{ objectPosition: 'center 20%' }}
