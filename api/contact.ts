@@ -3,6 +3,10 @@ import { Resend } from 'resend';
 
 // Resendクライアントの初期化
 const resend = new Resend(process.env.RESEND_API_KEY);
+const contactEmail = (process.env.CONTACT_EMAIL || 'default@example.com').trim();
+
+console.log('API Key:', process.env.RESEND_API_KEY ? 'Set' : 'Not Set');
+console.log('Contact Email:', contactEmail);
 
 // CORS設定
 const allowedOrigins = [
@@ -51,7 +55,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // メール本文の作成
         const emailContent = `
-【User Value Inc. お問い合わせフォーム】
+【User Value Inc.お問い合わせフォーム】
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ■ お問い合わせ種別
@@ -74,16 +78,23 @@ ${message}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 送信日時: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    `.trim();
+`.trim();
 
         // Resendでメール送信
         const data = await resend.emails.send({
             from: 'User Value Inc. <noreply@uservalue.jp>', // 認証済みドメインから送信
             to: [contactEmail],
             replyTo: email, // お客様のメールアドレスを返信先に設定
-            subject: `【お問い合わせ】${company} ${name}様`,
+            subject: `【お問い合わせ】${company} ${name} 様`,
             text: emailContent,
         });
+
+        console.log('Resend API Response:', data);
+
+        if (data.error) {
+            console.error('Resend API Error:', data.error);
+            return res.status(400).json({ success: false, message: 'メール送信に失敗しました。', error: data.error });
+        }
 
         // 成功レスポンス
         return res.status(200).json({
