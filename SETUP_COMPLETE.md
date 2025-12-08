@@ -13,9 +13,12 @@
 
 #### 環境変数（Vercel）
 ```
-RESEND_API_KEY=re_NuHwYiCW_J1hukhYZfFehoUfByJtSamkn
+RESEND_API_KEY=(Vercel環境変数に設定済み)
 CONTACT_EMAIL=uservalue2021@gmail.com
 ```
+
+**⚠️ セキュリティ注意**: APIキーは環境変数として設定されており、GitHubには公開されていません。
+
 
 #### APIエンドポイント
 ```
