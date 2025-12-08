@@ -78,7 +78,7 @@ ${message}
 
         // Resendでメール送信
         const data = await resend.emails.send({
-            from: 'User Value Inc. <onboarding@resend.dev>', // ドメイン認証後は 'noreply@uservalue.jp' に変更可能
+            from: 'User Value Inc. <noreply@uservalue.jp>', // 認証済みドメインから送信
             to: [contactEmail],
             replyTo: email, // お客様のメールアドレスを返信先に設定
             subject: `【お問い合わせ】${company} ${name}様`,
