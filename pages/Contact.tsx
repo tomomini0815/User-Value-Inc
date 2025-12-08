@@ -1,8 +1,117 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { COMPANY_INFO } from '../constants';
+import { Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+
+interface FormData {
+    inquiryTypes: string[];
+    company: string;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    privacyAgreed: boolean;
+}
 
 const Contact: React.FC = () => {
+    const [formData, setFormData] = useState<FormData>({
+        inquiryTypes: [],
+        company: '',
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        privacyAgreed: false,
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    // Formspree endpoint - ユーザーは自分のFormspree IDに置き換える必要があります
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+    const handleCheckboxChange = (value: string) => {
+        setFormData(prev => ({
+            ...prev,
+            inquiryTypes: prev.inquiryTypes.includes(value)
+                ? prev.inquiryTypes.filter(type => type !== value)
+                : [...prev.inquiryTypes, value]
+        }));
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value, type } = e.target;
+        if (type === 'checkbox') {
+            const checked = (e.target as HTMLInputElement).checked;
+            setFormData(prev => ({ ...prev, [name]: checked }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // バリデーション
+        if (formData.inquiryTypes.length === 0) {
+            setErrorMessage('お問い合わせ種別を少なくとも1つ選択してください。');
+            setSubmitStatus('error');
+            return;
+        }
+
+        if (!formData.privacyAgreed) {
+            setErrorMessage('プライバシーポリシーに同意してください。');
+            setSubmitStatus('error');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
+
+        try {
+            // Formspreeへの送信
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    inquiryTypes: formData.inquiryTypes.join(', '),
+                    company: formData.company,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    _subject: `【User Value Inc.】お問い合わせ - ${formData.company} ${formData.name}様`,
+                }),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                // フォームをリセット
+                setFormData({
+                    inquiryTypes: [],
+                    company: '',
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    privacyAgreed: false,
+                });
+            } else {
+                throw new Error('送信に失敗しました。');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+            setErrorMessage('送信中にエラーが発生しました。しばらく時間をおいて再度お試しください。');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-brand-black pt-32 pb-20 px-6 flex flex-col justify-center">
             <div className="container mx-auto max-w-3xl">
@@ -33,7 +142,43 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-xl backdrop-blur-sm border border-white/5"
                     >
-                        <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+                        {/* Status Messages */}
+                        <AnimatePresence mode="wait">
+                            {submitStatus === 'success' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="mb-6 p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex items-start gap-4"
+                                >
+                                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 className="text-green-400 font-bold text-lg mb-2">送信完了</h3>
+                                        <p className="text-green-300/80 text-sm leading-relaxed">
+                                            お問い合わせありがとうございます。<br />
+                                            内容を確認の上、2営業日以内にご連絡させていただきます。
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {submitStatus === 'error' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="mb-6 p-6 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-4"
+                                >
+                                    <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />
+                                    <div>
+                                        <h3 className="text-red-400 font-bold text-lg mb-2">送信エラー</h3>
+                                        <p className="text-red-300/80 text-sm">{errorMessage}</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        <form className="space-y-10" onSubmit={handleSubmit}>
                             {/* Inquiry Type - Checkboxes */}
                             <div>
                                 <label className="block text-sm font-bold mb-4 text-white">
@@ -54,6 +199,8 @@ const Contact: React.FC = () => {
                                                 type="checkbox"
                                                 name="inquiry_type"
                                                 value={type}
+                                                checked={formData.inquiryTypes.includes(type)}
+                                                onChange={() => handleCheckboxChange(type)}
                                                 className="w-4 h-4 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent"
                                             />
                                             <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{type}</span>
@@ -70,6 +217,9 @@ const Contact: React.FC = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleInputChange}
                                         required
                                         className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
                                         placeholder="例）株式会社User Value"
@@ -81,6 +231,9 @@ const Contact: React.FC = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
                                         required
                                         className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
                                         placeholder="例）山田 太郎"
@@ -96,6 +249,9 @@ const Contact: React.FC = () => {
                                     </label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
                                         required
                                         className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
                                         placeholder="例）info@uservalue.co.jp"
@@ -107,6 +263,9 @@ const Contact: React.FC = () => {
                                     </label>
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
                                         className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600"
                                         placeholder="例）03-1234-5678"
                                     />
@@ -119,6 +278,9 @@ const Contact: React.FC = () => {
                                     お問い合わせ内容 <span className="text-brand-accent">*</span>
                                 </label>
                                 <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     rows={6}
                                     required
                                     className="w-full bg-transparent border border-white/20 rounded p-4 text-base focus:outline-none focus:border-brand-accent focus:bg-white/5 transition-all duration-300 placeholder-gray-600 resize-none"
@@ -132,6 +294,9 @@ const Contact: React.FC = () => {
                                     <input
                                         type="checkbox"
                                         id="privacy"
+                                        name="privacyAgreed"
+                                        checked={formData.privacyAgreed}
+                                        onChange={handleInputChange}
                                         required
                                         className="mt-1 w-5 h-5 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent cursor-pointer"
                                     />
@@ -148,9 +313,20 @@ const Contact: React.FC = () => {
 
                             <button
                                 type="submit"
-                                className="w-full py-5 bg-white text-black font-bold text-lg hover:bg-brand-accent hover:text-white transition-all duration-300 rounded shadow-lg hover:shadow-brand-accent/20"
+                                disabled={isSubmitting}
+                                className="w-full py-5 bg-white text-black font-bold text-lg hover:bg-brand-accent hover:text-white transition-all duration-300 rounded shadow-lg hover:shadow-brand-accent/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                             >
-                                同意して送信する
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader className="w-5 h-5 animate-spin" />
+                                        送信中...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send className="w-5 h-5" />
+                                        同意して送信する
+                                    </>
+                                )}
                             </button>
                         </form>
                     </motion.div>

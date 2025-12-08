@@ -212,8 +212,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                         {/* Gradient Overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-[#050505]/10 to-transparent"></div>
 
-                                        {/* Content Overlay */}
-                                        <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                                        {/* Content Overlay - Positioned slightly above bottom */}
+                                        <div className="absolute inset-0 p-8 flex flex-col items-start justify-end pb-16">
                                             <h3 className="font-display text-5xl md:text-6xl font-bold uppercase mb-3 text-white group-hover:text-brand-accent transition-colors">{project.title}</h3>
                                             <p className="font-mono text-xs uppercase tracking-wider text-brand-accent mb-4">{project.description}</p>
                                             <p className="font-sans text-sm md:text-base leading-relaxed text-gray-300 max-w-lg">

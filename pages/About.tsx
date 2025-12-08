@@ -32,24 +32,28 @@ const About: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="max-w-xl"
+                        className="max-w-xl space-y-4"
                     >
                         <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                            User Value Inc. is an elite digital product studio.
-                            Operating as a high-precision specialized unit for your digital strategy.
+                            User Value Inc. is your digital partner.
+                            We craft beautiful and functional products that bring your vision to life.
+                        </p>
+                        <p className="text-gray-500 text-sm md:text-base font-light leading-relaxed">
+                            User Value Inc.は、あなたのデジタルパートナーです。
+                            あなたのビジョンを形にする、美しく使いやすいプロダクトを一緒に創ります。
                         </p>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Hero Image - Minimalist Workspace / Solo Vibe */}
+            {/* Hero Image - Creative Studio */}
             <div className="w-full h-[50vh] overflow-hidden relative group">
                 <motion.img
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop"
-                    alt="Minimalist Workspace"
+                    src="/User-Value-Inc/images/about-hero.png"
+                    alt="Creative Studio Workspace"
                     className="w-full h-full object-cover opacity-60 filter grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
