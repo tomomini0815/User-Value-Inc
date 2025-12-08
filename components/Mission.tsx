@@ -1,8 +1,14 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { PageId } from '../types';
 
-const Mission: React.FC = () => {
+interface MissionProps {
+    onNavigate?: (page: PageId) => void;
+}
+
+const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
     return (
         <section className="relative bg-[#050505] border-b border-white/10 overflow-hidden">
             {/* Background Elements */}
@@ -32,15 +38,25 @@ const Mission: React.FC = () => {
                                 <br className="hidden md:block" />
                                 for the digital age.
                             </h2>
-                            <p className="text-white/50 text-sm md:text-base lg:text-lg font-light max-w-2xl leading-relaxed border-l-2 border-white/10 pl-6">
-                                デジタル時代の基盤を、美しく、機能的に。<br />
-                                ユーザーの体験を支える「見えないインフラ」を構築します。
+                            <p className="text-white/60 text-sm md:text-base lg:text-lg font-light max-w-2xl leading-relaxed border-l-2 border-white/10 pl-6">
+                                『あったらいいな』を、当たり前の景色に。
                             </p>
                         </motion.div>
                     </div>
 
                     {/* CTA Area */}
-                    <div className="lg:col-span-4 group relative overflow-hidden cursor-pointer border-l border-white/10">
+                    <div
+                        className="lg:col-span-4 group relative overflow-hidden cursor-pointer border-l border-white/10"
+                        onClick={() => onNavigate?.('contact')}
+                        tabIndex={0}
+                        role="button"
+                        aria-label="Start Project - Contact us"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                onNavigate?.('contact');
+                            }
+                        }}
+                    >
                         <div className="absolute inset-0 bg-white group-hover:bg-brand-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
 
                         <div className="relative h-full p-10 md:p-16 flex flex-col justify-between items-start z-10">

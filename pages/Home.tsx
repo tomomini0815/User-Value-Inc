@@ -238,7 +238,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
             </section>
 
-            <Mission />
+            <Mission onNavigate={onNavigate} />
 
             {/* CTA Section - Minimal & Bold */}
             <section className="py-40 border-t border-white/20 bg-[#050505]">
