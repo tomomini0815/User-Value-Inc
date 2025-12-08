@@ -80,7 +80,6 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: "Top", href: "/" },
   { id: 'services', label: "Services", href: "/services" },
   { id: 'about', label: "About", href: "/about" },
-  { id: 'contact', label: "Contact", href: "/contact" },
 ];
 
 export interface ServiceFlowStep {
