@@ -141,42 +141,6 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-xl backdrop-blur-sm border border-white/5"
                     >
-                        {/* Status Messages */}
-                        <AnimatePresence mode="wait">
-                            {submitStatus === 'success' && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="mb-6 p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex items-start gap-4"
-                                >
-                                    <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <h3 className="text-green-400 font-bold text-lg mb-2">送信完了</h3>
-                                        <p className="text-green-300/80 text-sm leading-relaxed">
-                                            お問い合わせありがとうございます。<br />
-                                            内容を確認の上、2営業日以内にご連絡させていただきます。
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            )}
-
-                            {submitStatus === 'error' && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className="mb-6 p-6 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-4"
-                                >
-                                    <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />
-                                    <div>
-                                        <h3 className="text-red-400 font-bold text-lg mb-2">送信エラー</h3>
-                                        <p className="text-red-300/80 text-sm">{errorMessage}</p>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-
                         <form className="space-y-10" onSubmit={handleSubmit}>
                             {/* Inquiry Type - Checkboxes */}
                             <div>
@@ -327,6 +291,42 @@ const Contact: React.FC = () => {
                                     </>
                                 )}
                             </button>
+
+                            {/* Status Messages - Below Submit Button */}
+                            <AnimatePresence mode="wait">
+                                {submitStatus === 'success' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex items-start gap-4"
+                                    >
+                                        <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h3 className="text-green-400 font-bold text-lg mb-2">送信完了</h3>
+                                            <p className="text-green-300/80 text-sm leading-relaxed">
+                                                お問い合わせありがとうございます。<br />
+                                                内容を確認の上、2営業日以内にご連絡させていただきます。
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                )}
+
+                                {submitStatus === 'error' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        className="p-6 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-4"
+                                    >
+                                        <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />
+                                        <div>
+                                            <h3 className="text-red-400 font-bold text-lg mb-2">送信エラー</h3>
+                                            <p className="text-red-300/80 text-sm">{errorMessage}</p>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </form>
                     </motion.div>
                 </div>
