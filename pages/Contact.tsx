@@ -28,8 +28,8 @@ const Contact: React.FC = () => {
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
-    // Formspree endpoint - ユーザーは自分のFormspree IDに置き換える必要があります
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+    // Vercel API endpoint - Vercel Serverless Functionを使用
+    const API_ENDPOINT = '/api/contact';
 
     const handleCheckboxChange = (value: string) => {
         setFormData(prev => ({
@@ -71,8 +71,8 @@ const Contact: React.FC = () => {
         setErrorMessage('');
 
         try {
-            // Formspreeへの送信
-            const response = await fetch(FORMSPREE_ENDPOINT, {
+            // Vercel API Functionへの送信
+            const response = await fetch(API_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,7 +84,6 @@ const Contact: React.FC = () => {
                     email: formData.email,
                     phone: formData.phone,
                     message: formData.message,
-                    _subject: `【User Value Inc.】お問い合わせ - ${formData.company} ${formData.name}様`,
                 }),
             });
 
