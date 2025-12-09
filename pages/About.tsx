@@ -55,7 +55,7 @@ const About: React.FC = () => {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     src={getImagePath("/images/about-hero.png")}
                     alt="Creative Studio Workspace"
-                    className="w-full h-full object-cover opacity-60 filter grayscale group-hover:grayscale-0 transition-all duration-1000"
+                    className="w-full h-full object-cover opacity-60 custom-grayscale transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
             </div>
@@ -70,7 +70,7 @@ const About: React.FC = () => {
                                 <img
                                     src={getImagePath("/images/tomomi-era.jpg")}
                                     alt="Representative Director - Tomomi Era"
-                                    className="w-full h-full object-cover object-[center_20%] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                                    className="w-full h-full object-cover object-[center_20%] custom-grayscale group-hover:scale-105 transition-all duration-700"
                                     style={{ objectPosition: 'center 20%' }}
                                 />
 
