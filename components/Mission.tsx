@@ -30,13 +30,11 @@ const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
                                 <span className="w-1.5 h-1.5 bg-brand-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
                                 // OUR MISSION <span className="text-white/30 ml-2 text-xs tracking-wider">ミッション</span>
                             </p>
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tighter mb-8">
-                                Design the <br className="hidden md:block" />
+                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.2] tracking-tighter mb-8">
+                                デジタル時代の基盤を、<br className="hidden md:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-white to-gray-500 animate-gradient-x">
-                                    invisible infrastructure
+                                    美しく、機能的に。
                                 </span>
-                                <br className="hidden md:block" />
-                                for the digital age.
                             </h2>
                             <p className="text-white/60 text-sm md:text-base lg:text-lg font-light max-w-2xl leading-relaxed border-l-2 border-white/10 pl-6">
                                 『あったらいいな』を、当たり前の景色に。
