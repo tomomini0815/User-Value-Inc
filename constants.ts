@@ -79,6 +79,7 @@ export const PROJECTS: ProjectItem[] = [
 export const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: "Top", href: "/" },
   { id: 'services', label: "Services", href: "/services" },
+  { id: 'pricing', label: "Pricing", href: "/pricing" },
   { id: 'about', label: "About", href: "/about" },
 ];
 
@@ -232,99 +233,99 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailData> = {
   'service_ai_web': {
     id: 'service_ai_web',
     title: "AI Web App Development",
-    subtitle: "AIエージェントが加速させる、次世代のWeb開発プロセス",
-    description: "要件定義からコーディング、テストまでをAIエージェントが自律的に実行。従来の開発期間を劇的に短縮し、圧倒的なスピードとコストパフォーマンスで高品質なWebアプリケーションを提供します。",
+    subtitle: "AIツールを活用した効率的なWeb開発",
+    description: "GitHub Copilot、Cursor、Claude等のAIツールを活用し、コーディング効率を大幅に向上。人間のエンジニアが品質を監修しながら、従来より短期間で高品質なWebアプリケーションを提供します。",
     flow: [
       {
         step: "01",
-        title: "AI要件定義 & アーキテクチャ設計",
-        description: "対話型AIがヒアリングを行い、仕様書（PRD）と最適な技術選定、DB設計図を即座に自動生成します。"
+        title: "ヒアリング・要件整理",
+        description: "お客様のご要望を丁寧にヒアリング。AIを活用して要件を素早くドキュメント化し、認識のズレを防ぎます。"
       },
       {
         step: "02",
-        title: "マルチエージェント・コーディング",
-        description: "フロントエンド、バックエンド、DB担当の複数のAIエージェントが連携し、機能ごとに並行してコードを生成・実装します。"
+        title: "設計・プロトタイプ作成",
+        description: "AIデザインツールを活用し、ワイヤーフレームやUIデザインを効率的に作成。早期にイメージを共有します。"
       },
       {
         step: "03",
-        title: "自動リファクタリング & セキュリティ診断",
-        description: "生成されたコードに対し、別のAIがセキュリティ脆弱性のチェックと、パフォーマンス最適化のためのリファクタリングを行います。"
+        title: "AIアシスト開発",
+        description: "AIコーディングアシスタントを活用し、フロントエンド・バックエンドを効率的に実装。人間がレビュー・品質管理を行います。"
       },
       {
         step: "04",
-        title: "AI自動テスト & バグ修正",
-        description: "テストケースの作成から実行までをAIが担当。エラーが出た場合も、AIがログを解析して修正パッチを自動で適用します。"
+        title: "テスト・デバッグ",
+        description: "AIを活用してテストコードを生成し、バグの早期発見・修正を行います。最終確認は人間が実施します。"
       },
       {
         step: "05",
-        title: "自動デプロイ & 自律運用",
-        description: "完成したアプリケーションをクラウドへ自動デプロイ。運用中もAIがサーバー負荷を監視し、自動でスケーリングや障害対応を行います。"
+        title: "デプロイ・納品",
+        description: "Vercel、AWS等のクラウドサービスにデプロイ。納品後のサポートもご相談に応じて対応します。"
       }
     ]
   },
   'service_ai_app': {
     id: 'service_ai_app',
     title: "AI Mobile App Production",
-    subtitle: "クロスプラットフォーム開発の常識を覆す、AIによる高速実装",
-    description: "iOS/Androidの両OS対応アプリを、AIが高速に構築。トレンド分析からUI生成、実装、ストア申請までをAIが強力にサポートし、ビジネスの立ち上げを加速させます。",
+    subtitle: "AIを活用した効率的なモバイルアプリ開発",
+    description: "React Native / Flutterでのクロスプラットフォーム開発にAIツールを組み合わせ、iOS/Android両対応アプリを効率的に開発。UI生成やコーディングをAIがサポートします。",
     flow: [
       {
         step: "01",
-        title: "トレンド分析 & コンセプト生成",
-        description: "AIが市場のトレンドや競合アプリを分析し、「売れる」アプリのコンセプトや機能を提案。ユーザーペルソナも自動生成します。"
+        title: "コンセプト・企画設計",
+        description: "アプリの目的やターゲットユーザーを整理。AIを活用して競合調査や機能リストの作成を効率化します。"
       },
       {
         step: "02",
-        title: "UI/アセット自動生成",
-        description: "テキストでの指示（プロンプト）から、アプリ画面のデザインや、アイコン・画像素材をAIが生成します。"
+        title: "UI/UXデザイン",
+        description: "Figma + AIプラグインを活用し、モバイルに最適化されたUIデザインを効率的に作成します。"
       },
       {
         step: "03",
-        title: "クロスプラットフォーム開発",
-        description: "FlutterやReact Nativeを用い、AIが単一のコードベースからiOSとAndroid両方のアプリを同時に構築します。"
+        title: "アプリ開発",
+        description: "Flutter / React NativeでAIコーディングアシスタントを活用しながら、iOS/Android両対応のアプリを開発します。"
       },
       {
         step: "04",
-        title: "クラウド実機テスト",
-        description: "クラウド上の数百種類の端末で、AIが自動操作テストを実施。画面崩れやクラッシュを検知し、レポート化します。"
+        title: "テスト・動作確認",
+        description: "実機やシミュレーターで動作確認。AIを活用してテストケースを作成し、品質を担保します。"
       },
       {
         step: "05",
-        title: "ASO（ストア最適化） & 申請",
-        description: "App Store/Google Play向けの紹介文、キーワード、スクリーンショットをAIが最適化。審査ガイドラインへの適合チェックも行います。"
+        title: "ストア申請サポート",
+        description: "App Store / Google Playへの申請に必要な素材準備や申請手続きをサポートします。"
       }
     ]
   },
   'service_ai_saas': {
     id: 'service_ai_saas',
     title: "AI SaaS Product Design",
-    subtitle: "部品の組み合わせで創る、AI時代のSaaS構築",
-    description: "複雑な業務システムやSaaSを、AIが「部品の組み合わせ」で高速構築。PMF（市場適合）までの検証サイクルを回し、データに基づいた改善を自動化します。",
+    subtitle: "AIを活用した効率的なSaaS・業務システム開発",
+    description: "認証・決済等の共通機能はテンプレートを活用し、コア機能の開発にAIツールを最大限活用。短期間でMVPを構築し、素早く市場検証を行います。",
     flow: [
       {
         step: "01",
-        title: "課題抽出 & ソリューション探索",
-        description: "膨大な業界データやレビューをAIが分析し、ユーザーの深い悩み（ペインポイント）を特定。解決策となる機能セットを導き出します。"
+        title: "課題ヒアリング・要件定義",
+        description: "解決したい課題や業務フローを丁寧にヒアリング。AIを活用して要件を整理し、優先順位を決定します。"
       },
       {
         step: "02",
-        title: "データモデル & API自動設計",
-        description: "複雑な業務フローをAIが構造化し、拡張性の高いデータベース設計とAPI仕様書（OpenAPI）を自動生成します。"
+        title: "システム設計",
+        description: "データベース設計やAPI設計をAIの補助を受けながら効率的に行います。拡張性を考慮した設計を心がけます。"
       },
       {
         step: "03",
-        title: "MVP高速構築 (Boilerplate)",
-        description: "認証、決済、管理画面などのSaaS共通機能は、AIが既存の高品質なテンプレートを用いて一瞬で用意。コア機能の開発に集中します。"
+        title: "MVP開発",
+        description: "認証・決済等の共通機能はテンプレートを活用し、コア機能をAIアシストで効率的に開発します。"
       },
       {
         step: "04",
-        title: "ユーザー行動予測 & AI改善",
-        description: "リリース後のユーザー行動をAIがシミュレーション・分析し、離脱要因を特定。UIや機能の改善案を自動で提示します。"
+        title: "テスト・フィードバック反映",
+        description: "テストユーザーからのフィードバックを収集し、AIを活用して迅速に改善・機能追加を行います。"
       },
       {
         step: "05",
-        title: "カスタマーサクセス自動化",
-        description: "操作マニュアル、FAQ、チュートリアル動画などをAIが自動生成。ユーザーからの問い合わせ対応もAIボットが一次対応します。"
+        title: "本番リリース・運用開始",
+        description: "本番環境へのデプロイと運用開始。必要に応じて保守・機能追加のサポートも承ります。"
       }
     ]
   }
@@ -334,25 +335,25 @@ export const AI_SERVICES: ServiceItem[] = [
   {
     id: 'ai1',
     title: "AI Web App Development",
-    description: "AIエージェントによる自律的なコーディングとテストで、開発スピードを最大化。要件定義からデプロイまでを高速に実行します。",
+    description: "AIコーディングアシスタントを活用し、従来より短期間で高品質なWebアプリケーションを開発。人間が品質を監修します。",
     icon: Zap,
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop",
-    tags: ["AI Agents", "Auto-Code", "Self-Healing"]
+    tags: ["AI Assist", "React", "Next.js"]
   },
   {
     id: 'ai2',
     title: "AI Mobile App Production",
-    description: "クロスプラットフォーム開発をAIが加速。UI生成からストア申請まで、モバイルアプリ開発の全工程をAIがサポートします。",
+    description: "Flutter / React NativeでのアプリをAIツールを活用して効率的に開発。iOS/Android両対応アプリをスピーディに納品します。",
     icon: Smartphone,
     image: "https://images.unsplash.com/photo-1664575602554-208c7a77ee71?q=80&w=2667&auto=format&fit=crop",
-    tags: ["Flutter", "AI UI Gen", "Auto-Test"]
+    tags: ["Flutter", "React Native", "Cross-platform"]
   },
   {
     id: 'ai3',
     title: "AI SaaS Product Design",
-    description: "データドリブンな課題発見と、AIによる高速なMVP構築。PMFへの最短ルートを提示し、プロダクトの成長を自動化します。",
+    description: "テンプレートとAIツールを活用し、短期間でMVPを構築。素早く市場検証を行い、プロダクトの成長をサポートします。",
     icon: Cpu,
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
-    tags: ["Data Driven", "Auto-API", "Growth AI"]
+    tags: ["MVP", "SaaS", "Rapid Dev"]
   }
 ];

@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Pricing from './pages/Pricing';
+import AIServices from './pages/AIServices';
 import ServiceDetail from './pages/ServiceDetail';
 import { PageId } from './types';
 
@@ -23,6 +25,8 @@ const App: React.FC = () => {
       case '/about': return 'about';
       case '/contact': return 'contact';
       case '/privacy': return 'privacy';
+      case '/pricing': return 'pricing';
+      case '/services/ai': return 'ai_services';
       case '/services/web': return 'service_web';
       case '/services/app': return 'service_app';
       case '/services/uiux': return 'service_uiux';
@@ -42,6 +46,8 @@ const App: React.FC = () => {
       case 'about': return '/about';
       case 'contact': return '/contact';
       case 'privacy': return '/privacy';
+      case 'pricing': return '/pricing';
+      case 'ai_services': return '/services/ai';
       case 'service_web': return '/services/web';
       case 'service_app': return '/services/app';
       case 'service_uiux': return '/services/uiux';
@@ -90,6 +96,8 @@ const App: React.FC = () => {
       case 'about': return <About />;
       case 'contact': return <Contact />;
       case 'privacy': return <PrivacyPolicy />;
+      case 'pricing': return <Pricing onNavigate={handleNavigate} />;
+      case 'ai_services': return <AIServices onNavigate={handleNavigate} />;
       case 'service_web': return <ServiceDetail serviceId="service_web" onNavigate={handleNavigate} />;
       case 'service_app': return <ServiceDetail serviceId="service_app" onNavigate={handleNavigate} />;
       case 'service_uiux': return <ServiceDetail serviceId="service_uiux" onNavigate={handleNavigate} />;

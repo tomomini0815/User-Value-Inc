@@ -30,7 +30,7 @@ const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
                                 <span className="w-1.5 h-1.5 bg-brand-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
                                 // OUR MISSION <span className="text-white/30 ml-2 text-xs tracking-wider">ミッション</span>
                             </p>
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.2] tracking-tighter mb-8">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.2] tracking-tighter mb-8">
                                 デジタル時代の基盤を、<br className="hidden md:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-white to-gray-500 animate-gradient-x">
                                     美しく、機能的に。

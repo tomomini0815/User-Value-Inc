@@ -139,6 +139,7 @@ const About: React.FC = () => {
                                         { label: 'Headquarters', value: COMPANY_INFO.location },
                                         { label: 'Email', value: COMPANY_INFO.email },
                                         { label: 'Phone', value: COMPANY_INFO.phone },
+                                        { label: 'Main Bank', value: '三菱UFJ銀行 新百合ヶ丘支店' },
                                     ].map((row, i) => (
                                         <div key={i} className="py-6 border-b border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 group hover:bg-white/5 transition-colors px-2 cursor-default">
                                             <dt className="text-gray-500 font-mono text-xs uppercase tracking-wider flex items-center">{row.label}</dt>

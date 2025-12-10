@@ -112,16 +112,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, onNavigate }) 
                     </div>
                 </div>
 
-                {/* CTA */}
-                <div className="mt-32 text-center">
-                    <p className="text-gray-400 mb-8">プロジェクトのご相談はこちらから</p>
-                    <button
-                        onClick={() => onNavigate('contact')}
-                        className="inline-block px-12 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-white transition-all duration-300"
-                    >
-                        Contact Us
-                    </button>
-                </div>
+
             </div>
         </div>
     );

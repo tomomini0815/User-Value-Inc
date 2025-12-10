@@ -18,12 +18,9 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
         }
     };
 
-    const handleAIServiceClick = (index: number) => {
+    const handleAIServiceClick = () => {
         if (!onNavigate) return;
-        const pageIds: PageId[] = ['service_ai_web', 'service_ai_app', 'service_ai_saas'];
-        if (pageIds[index]) {
-            onNavigate(pageIds[index]);
-        }
+        onNavigate('ai_services');
     };
 
     return (
@@ -82,57 +79,55 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* AI Services Header */}
-                {false && (<>
-                    <div className="px-6 md:px-12 py-16 md:py-20 border-b border-white/20 bg-white/5">
-                        <h2 className="font-mono text-brand-accent text-xs mb-4 md:mb-6 uppercase tracking-widest">
+                <div className="px-6 md:px-12 py-16 md:py-20 border-b border-white/20 bg-white/5">
+                    <h2 className="font-mono text-brand-accent text-xs mb-4 md:mb-6 uppercase tracking-widest">
                 // Next Gen Development
-                        </h2>
-                        <h1 className="font-display text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white uppercase">
-                            AI-Driven <br /> Development
-                        </h1>
-                    </div>
+                    </h2>
+                    <h1 className="font-display text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white uppercase">
+                        AI-Driven <br /> Development
+                    </h1>
+                </div>
 
-                    {/* AI Services Grid */}
-                    <div id="ai-driven-development" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b border-white/20">
-                        {AI_SERVICES.map((service, index) => (
-                            <div
-                                key={service.id}
-                                onClick={() => handleAIServiceClick(index)}
-                                className={`
+                {/* AI Services Grid */}
+                <div id="ai-driven-development" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b border-white/20">
+                    {AI_SERVICES.map((service, index) => (
+                        <div
+                            key={service.id}
+                            onClick={() => handleAIServiceClick()}
+                            className={`
                         group relative border-b border-white/20 bg-[#050505] p-6 md:p-8 flex flex-col justify-between min-h-[350px] hover:bg-white/5 transition-colors duration-500 cursor-pointer
                         ${index !== AI_SERVICES.length - 1 ? 'lg:border-r' : ''}
                         md:border-r
                     `}
-                            >
-                                <div>
-                                    <div className="flex justify-between items-start mb-6">
-                                        <span className="font-mono text-brand-accent text-lg">AI-0{index + 1}</span>
-                                        <service.icon className="w-6 h-6 text-gray-600 group-hover:text-brand-accent transition-colors" />
-                                    </div>
-                                    <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-6 font-mono">
-                                        {service.description}
-                                    </p>
+                        >
+                            <div>
+                                <div className="flex justify-between items-start mb-6">
+                                    <span className="font-mono text-brand-accent text-lg">AI-0{index + 1}</span>
+                                    <service.icon className="w-6 h-6 text-gray-600 group-hover:text-brand-accent transition-colors" />
                                 </div>
-
-                                <div>
-                                    <div className="flex flex-wrap gap-2 mb-6">
-                                        {service.tags.map(tag => (
-                                            <span key={tag} className="text-[10px] uppercase border border-white/10 px-2 py-1 text-gray-500 bg-white/5">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all duration-300 group-hover:translate-x-2">
-                                        View Workflow <ArrowUpRight className="w-4 h-4" />
-                                    </button>
-                                </div>
+                                <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-6 font-mono">
+                                    {service.description}
+                                </p>
                             </div>
-                        ))}
-                    </div>
-                </>)}
+
+                            <div>
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {service.tags.map(tag => (
+                                        <span key={tag} className="text-[10px] uppercase border border-white/10 px-2 py-1 text-gray-500 bg-white/5">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                                <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all duration-300 group-hover:translate-x-2">
+                                    View Workflow <ArrowUpRight className="w-4 h-4" />
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
                 {/* Products Section - Full Width Cards */}
                 <div className="border-b border-white/20">
