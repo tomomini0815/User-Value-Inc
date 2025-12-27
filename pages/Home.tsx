@@ -230,7 +230,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                 className="shrink-0 w-[20vw] h-full border-r border-white/20 flex items-center justify-center cursor-pointer hover:bg-white/5 transition-colors"
                             >
                                 <div className="rotate-90">
-                                    <span className="font-mono text-sm uppercase tracking-[0.5em] text-white">View All Services →</span>
+                                    <span className="font-mono text-base uppercase tracking-[0.5em] text-white">View All Services →</span>
                                 </div>
                             </div>
                         </motion.div>
