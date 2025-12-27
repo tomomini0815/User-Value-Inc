@@ -74,6 +74,9 @@ const About: React.FC = () => {
                                     style={{ objectPosition: 'center 20%' }}
                                 />
 
+                                {/* Gradient overlay from bottom to top - keeps face visible */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent transition-all duration-700"></div>
+
                                 {/* Badge */}
                                 <div className="absolute bottom-4 left-4">
                                     <div className="bg-black/50 backdrop-blur-md px-3 py-1 text-xs font-mono border border-white/10 text-white">

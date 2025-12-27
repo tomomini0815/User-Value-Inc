@@ -118,7 +118,7 @@ const AI_PLANS = [
             { text: 'SEO基本設定', included: true },
             { text: 'オリジナルデザイン', included: true },
             { text: 'カスタムアニメーション', included: true },
-            { text: 'AI自動テスト', included: true },
+            { text: 'エンジニアによる最終チェック', included: true },
         ],
         recommended: true,
         note: 'コスパ最強のAI開発',
@@ -140,6 +140,7 @@ const AI_PLANS = [
             { text: 'SEO最適化', included: true },
             { text: 'オリジナルデザイン', included: true },
             { text: 'カスタムアニメーション', included: true },
+            { text: 'エンジニアによる最終チェック', included: true },
             { text: '保守・運用サポート', included: true },
         ],
         recommended: false,
@@ -288,8 +289,8 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                     className="mb-12"
                 >
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-400 flex items-center justify-center">
-                            <Cpu className="w-5 h-5 text-white" />
+                        <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                            <Cpu className="w-5 h-5 text-gray-400" />
                         </div>
                         <span className="font-mono text-brand-accent text-sm tracking-widest uppercase">// AI-Driven Development</span>
                     </div>
@@ -316,8 +317,8 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                         className="mb-12"
                     >
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-accent to-orange-400 flex items-center justify-center">
-                                <Sparkles className="w-5 h-5 text-white" />
+                            <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                                <Sparkles className="w-5 h-5 text-gray-400" />
                             </div>
                             <span className="font-mono text-brand-accent text-sm tracking-widest uppercase">// Standard Development</span>
                         </div>

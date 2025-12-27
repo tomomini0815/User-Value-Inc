@@ -73,14 +73,24 @@ export const PROJECTS: ProjectItem[] = [
     image: getImagePath("/images/ainance-mockup.png"),
     url: "https://tomomini0815.github.io/ainance-v2",
     tags: ["Fintech", "Predictive AI", "Data Viz"]
+  },
+  {
+    id: 'p3',
+    title: "LifeBridge",
+    description: "人生の転機に寄り添うAIパートナー",
+    longDescription: "人生には、結婚、出産、転職、引越し、介護といった大きな転機が訪れます。これらのライフイベントには、想像以上に多くの行政手続きが必要で、複雑な申請フロー、厳しい期限、見逃しやすい給付金など、多くの課題が存在します。\n\nLifeBridgeは、こうした課題を解決するために開発された、次世代のライフイベント支援プラットフォームです。",
+    // LifeBridge dashboard screenshot
+    image: getImagePath("/images/lifebridge-mockup.png"),
+    url: "https://life-bridge-lemon.vercel.app",
+    tags: ["Life Event", "AI Assistant", "Gov Tech"]
   }
 ];
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'home', label: "Top", href: "/" },
-  { id: 'services', label: "Services", href: "/services" },
-  { id: 'pricing', label: "Pricing", href: "/pricing" },
-  { id: 'about', label: "About", href: "/about" },
+  { id: 'home', label: "Top", labelJa: "トップ", href: "/" },
+  { id: 'services', label: "Services", labelJa: "サービス", href: "/services" },
+  { id: 'pricing', label: "Pricing", labelJa: "料金", href: "/pricing" },
+  { id: 'about', label: "About", labelJa: "会社概要", href: "/about" },
 ];
 
 export interface ServiceFlowStep {

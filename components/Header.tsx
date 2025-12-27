@@ -44,7 +44,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   ${currentPage === item.id ? 'bg-white text-black' : 'text-gray-300 hover:text-white hover:bg-white/10'}
               `}
             >
-              {item.label}
+              <div className="flex flex-col items-center gap-0.5">
+                <span>{item.label}</span>
+                {item.labelJa && (
+                  <span className="text-[10px] font-normal normal-case tracking-normal opacity-70">
+                    {item.labelJa}
+                  </span>
+                )}
+              </div>
             </button>
           ))}
         </nav>
@@ -86,9 +93,16 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.1 + i * 0.1, duration: 0.5 }}
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-5xl font-display font-bold text-left tracking-tight ${currentPage === item.id ? 'text-white' : 'text-gray-600'}`}
+                  className={`text-left ${currentPage === item.id ? 'text-white' : 'text-gray-600'}`}
                 >
-                  {item.label}
+                  <div className="text-5xl font-display font-bold tracking-tight">
+                    {item.label}
+                  </div>
+                  {item.labelJa && (
+                    <div className="text-2xl font-normal mt-1 opacity-70">
+                      {item.labelJa}
+                    </div>
+                  )}
                 </motion.button>
               ))}
             </div>

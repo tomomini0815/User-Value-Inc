@@ -58,8 +58,16 @@ const Hero: React.FC = () => {
 
                         <div className="w-full flex flex-col justify-end border-t border-white/20 pt-6 md:pt-8 mt-8 md:mt-12 text-right">
                             <div className="mix-blend-difference max-w-2xl ml-auto">
-                                <p className="font-sans text-lg md:text-3xl font-bold text-white mb-6 leading-tight">
-                                    あなたのビジョンを、<br />一緒に実現する。
+                                {/* Clear Value Proposition */}
+                                <p className="font-mono text-xs md:text-sm text-brand-accent uppercase tracking-[0.3em] mb-4">
+                                    Digital Product Studio
+                                </p>
+                                <p className="font-sans text-lg md:text-3xl font-bold text-white mb-4 leading-tight">
+                                    Webアプリ・モバイルアプリ開発、<br />
+                                    UI/UXデザイン、SaaS開発
+                                </p>
+                                <p className="font-sans text-base md:text-xl text-white/80 mb-6 leading-tight">
+                                    あなたのビジョンを、一緒に実現する。
                                 </p>
                                 <p className="font-mono text-xs md:text-sm text-gray-400 leading-relaxed tracking-wide">
                                     言葉にできないアイデアも、形にしたい想いも。<br />

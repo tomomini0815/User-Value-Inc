@@ -55,5 +55,6 @@ export type PageId = 'home' | 'services' | 'about' | 'contact' | 'privacy' | 'pr
 export interface NavItem {
   id: PageId;
   label: string;
+  labelJa?: string; // Japanese translation of the label
   href: string;
 }

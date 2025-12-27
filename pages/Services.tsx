@@ -30,10 +30,16 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 {/* Header */}
                 <div className="px-6 md:px-12 py-16 md:py-20 border-b border-white/20">
                     <h2 className="font-mono text-brand-accent text-xs mb-4 md:mb-6 uppercase tracking-widest">
-                // System Capabilities
+                        <div className="flex flex-col gap-1">
+                            <span>// System Capabilities</span>
+                            <span className="text-[10px] opacity-70">// システム機能</span>
+                        </div>
                     </h2>
                     <h1 className="font-display text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase">
-                        Digital <br /> Solutions
+                        <div className="flex flex-col gap-2">
+                            <span>Digital <br /> Solutions</span>
+                            <span className="text-3xl md:text-5xl lg:text-7xl opacity-70 normal-case">デジタルソリューション</span>
+                        </div>
                     </h1>
                 </div>
 
@@ -71,7 +77,11 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                     ))}
                                 </div>
                                 <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm text-white text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all duration-300 group-hover:translate-x-2">
-                                    View Workflow <ArrowUpRight className="w-4 h-4" />
+                                    <div className="flex flex-col items-start">
+                                        <span>View Workflow</span>
+                                        <span className="text-[9px] normal-case opacity-70">ワークフローを見る</span>
+                                    </div>
+                                    <ArrowUpRight className="w-4 h-4" />
                                 </button>
                             </div>
                         </div>
@@ -81,10 +91,16 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 {/* AI Services Header */}
                 <div className="px-6 md:px-12 py-16 md:py-20 border-b border-white/20 bg-white/5">
                     <h2 className="font-mono text-brand-accent text-xs mb-4 md:mb-6 uppercase tracking-widest">
-                // Next Gen Development
+                        <div className="flex flex-col gap-1">
+                            <span>// Next Gen Development</span>
+                            <span className="text-[10px] opacity-70">// 次世代開発</span>
+                        </div>
                     </h2>
                     <h1 className="font-display text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white uppercase">
-                        AI-Driven <br /> Development
+                        <div className="flex flex-col gap-2">
+                            <span>AI-Driven <br /> Development</span>
+                            <span className="text-2xl md:text-4xl lg:text-6xl opacity-70 normal-case">AI駆動型開発</span>
+                        </div>
                     </h1>
                 </div>
 
@@ -122,7 +138,11 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                     ))}
                                 </div>
                                 <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all duration-300 group-hover:translate-x-2">
-                                    View Workflow <ArrowUpRight className="w-4 h-4" />
+                                    <div className="flex flex-col items-start">
+                                        <span>View Workflow</span>
+                                        <span className="text-[9px] normal-case opacity-70">ワークフローを見る</span>
+                                    </div>
+                                    <ArrowUpRight className="w-4 h-4" />
                                 </button>
                             </div>
                         </div>
@@ -133,7 +153,10 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                 <div className="border-b border-white/20">
                     <div className="px-6 md:px-12 py-12 bg-white/5 border-b border-white/20">
                         <h2 className="font-mono text-white text-xs uppercase tracking-widest">
-                    // Proprietary Products
+                            <div className="flex flex-col gap-1">
+                                <span>// Proprietary Products</span>
+                                <span className="text-[10px] opacity-70">// 自社プロダクト</span>
+                            </div>
                         </h2>
                     </div>
 
@@ -159,7 +182,11 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                         {project.longDescription}
                                     </p>
                                     <div className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest">
-                                        Launch Project <ExternalLink className="w-4 h-4" />
+                                        <div className="flex flex-col">
+                                            <span>Launch Project</span>
+                                            <span className="text-[9px] normal-case opacity-70">プロジェクトを開く</span>
+                                        </div>
+                                        <ExternalLink className="w-4 h-4" />
                                     </div>
                                 </div>
 
