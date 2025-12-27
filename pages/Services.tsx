@@ -38,7 +38,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                     <h1 className="font-display text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase">
                         <div className="flex flex-col gap-2">
                             <span>Digital <br /> Solutions</span>
-                            <span className="text-3xl md:text-5xl lg:text-7xl opacity-70 normal-case">デジタルソリューション</span>
+                            <span className="text-2xl md:text-4xl lg:text-6xl opacity-70 normal-case">デジタルソリューション</span>
                         </div>
                     </h1>
                 </div>
@@ -99,7 +99,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                     <h1 className="font-display text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-white uppercase">
                         <div className="flex flex-col gap-2">
                             <span>AI-Driven <br /> Development</span>
-                            <span className="text-2xl md:text-4xl lg:text-6xl opacity-70 normal-case">AI駆動型開発</span>
+                            <span className="text-2xl md:text-4xl lg:text-6xl opacity-70 normal-case tracking-wider">AI駆動型開発</span>
                         </div>
                     </h1>
                 </div>
