@@ -17,6 +17,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's1',
     title: "Web App Development",
+    titleJa: "Webアプリ開発",
     description: "React, Next.js, Vue.jsなどのモダンフレームワークを駆使し、ビジネスの加速装置となるWebアプリケーションを構築。堅牢性と拡張性を兼ね備えたアーキテクチャで、長期的な価値を提供します。",
     icon: Monitor,
     // Abstract 3D shape / Code flow
@@ -26,6 +27,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's2',
     title: "Mobile App Production",
+    titleJa: "モバイルアプリ制作",
     description: "ユーザーの手のひらで最高の体験を。iOS / Androidネイティブ開発から、Flutterを用いたクロスプラットフォーム開発まで。直感的で中毒性のあるUI/UXを実現します。",
     icon: Smartphone,
     // Dark sleek glassmorphism
@@ -35,6 +37,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's3',
     title: "UI/UX Design & Audit",
+    titleJa: "UI/UXデザイン・監査",
     description: "データと感性の融合。ヒートマップ分析やユーザーインタビューに基づき、離脱率を改善。ブランドの世界観を体現する美しいインターフェースデザインを提供します。",
     icon: Layers,
     // Abstract fluid art, digital aesthetics
@@ -44,6 +47,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's4',
     title: "SaaS Product Design",
+    titleJa: "SaaSプロダクトデザイン",
     description: "複雑な業務フローをシンプルに。B2B SaaS特有の課題解決に向けたプロダクトデザイン。MVP開発からPMF後のグロースフェーズまで、デザインパートナーとして伴走します。",
     icon: Code,
     // Minimalist geometry
@@ -345,6 +349,7 @@ export const AI_SERVICES: ServiceItem[] = [
   {
     id: 'ai1',
     title: "AI Web App Development",
+    titleJa: "AI Webアプリ開発",
     description: "AIコーディングアシスタントを活用し、従来より短期間で高品質なWebアプリケーションを開発。人間が品質を監修します。",
     icon: Zap,
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2532&auto=format&fit=crop",
@@ -353,6 +358,7 @@ export const AI_SERVICES: ServiceItem[] = [
   {
     id: 'ai2',
     title: "AI Mobile App Production",
+    titleJa: "AIモバイルアプリ制作",
     description: "Flutter / React NativeでのアプリをAIツールを活用して効率的に開発。iOS/Android両対応アプリをスピーディに納品します。",
     icon: Smartphone,
     image: "https://images.unsplash.com/photo-1664575602554-208c7a77ee71?q=80&w=2667&auto=format&fit=crop",
@@ -361,6 +367,7 @@ export const AI_SERVICES: ServiceItem[] = [
   {
     id: 'ai3',
     title: "AI SaaS Product Design",
+    titleJa: "AI SaaSプロダクトデザイン",
     description: "テンプレートとAIツールを活用し、短期間でMVPを構築。素早く市場検証を行い、プロダクトの成長をサポートします。",
     icon: Cpu,
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",

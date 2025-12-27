@@ -21,6 +21,7 @@ export interface CompanyInfo {
 export interface ServiceItem {
   id: string;
   title: string;
+  titleJa?: string; // Japanese translation of the title
   description: string;
   icon: React.ElementType;
   image: string; // URL to the service abstract image

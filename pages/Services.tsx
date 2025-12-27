@@ -61,7 +61,12 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                     <service.icon className="w-7 h-7 md:w-8 md:h-8 text-gray-600 group-hover:text-white transition-colors" />
                                 </div>
                                 <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 group-hover:text-brand-accent transition-colors">
-                                    {service.title}
+                                    <div className="flex flex-col gap-1">
+                                        <span>{service.title}</span>
+                                        {service.titleJa && (
+                                            <span className="text-lg md:text-xl lg:text-2xl opacity-70 font-normal">{service.titleJa}</span>
+                                        )}
+                                    </div>
                                 </h3>
                                 <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8 font-mono">
                                     {service.description}
@@ -122,7 +127,12 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                                     <service.icon className="w-6 h-6 text-gray-600 group-hover:text-brand-accent transition-colors" />
                                 </div>
                                 <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-brand-accent transition-colors">
-                                    {service.title}
+                                    <div className="flex flex-col gap-1">
+                                        <span>{service.title}</span>
+                                        {service.titleJa && (
+                                            <span className="text-base md:text-lg opacity-70 font-normal">{service.titleJa}</span>
+                                        )}
+                                    </div>
                                 </h3>
                                 <p className="text-gray-400 text-sm leading-relaxed mb-6 font-mono">
                                     {service.description}
