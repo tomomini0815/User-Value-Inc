@@ -75,7 +75,7 @@ export const PROJECTS: ProjectItem[] = [
     longDescription: "Ainanceは、個人事業主・フリーランス・小規模事業者のための経理業務効率化Webアプリケーションです。\n\nレシートのOCR自動読み取り、音声入力による取引記録、収支の可視化、確定申告サポートなど、日々の経理作業に欠かせない機能を一つのプラットフォームで提供。煩雑な会計業務をシンプルに、もっとスマートに管理できます。",
     // Ainance dashboard screenshot
     image: getImagePath("/images/ainance-mockup.png"),
-    url: "https://tomomini0815.github.io/ainance-v2",
+    url: "https://ainance.jp",
     tags: ["Fintech", "Predictive AI", "Data Viz"]
   },
   {
