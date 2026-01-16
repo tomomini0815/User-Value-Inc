@@ -65,7 +65,7 @@ export const PROJECTS: ProjectItem[] = [
     // Journify dashboard screenshot
     image: getImagePath("/images/journify-new-mockup.jpg"),
     imageClassName: "scale-110 object-center",
-    url: "https://journify-v1.vercel.app/",
+    url: "https://myjournifyapp.com",
     tags: ["Travel Tech", "AI Generation", "Map Integration"]
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS: ProjectItem[] = [
     longDescription: "人生には、結婚、出産、転職、引越し、介護といった大きな転機が訪れます。これらのライフイベントには、想像以上に多くの行政手続きが必要で、複雑な申請フロー、厳しい期限、見逃しやすい給付金など、多くの課題が存在します。\n\nLifeBridgeは、こうした課題を解決するために開発された、次世代のライフイベント支援プラットフォームです。",
     // LifeBridge dashboard screenshot
     image: getImagePath("/images/lifebridge-mockup.png"),
-    url: "https://life-bridge-lemon.vercel.app",
+    url: "https://lifebridgeapp.jp",
     tags: ["Life Event", "AI Assistant", "Gov Tech"]
   }
 ];
