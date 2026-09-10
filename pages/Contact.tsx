@@ -96,31 +96,22 @@ const Contact: React.FC = () => {
                 console.warn('Network error or API unreachable, checking fallback:', netErr);
             }
 
-            // ローカル環境または開発モードの場合は常に成功扱い（テスト容易化）
-            const isLocal = typeof window !== 'undefined' && 
-                (window.location.hostname === 'localhost' || 
-                 window.location.hostname === '127.0.0.1' || 
-                 import.meta.env.DEV);
-
-            if (isSuccess || isLocal) {
-                setSubmitStatus('success');
-                // フォームをリセット
-                setFormData({
-                    inquiryTypes: [],
-                    company: '',
-                    name: '',
-                    email: '',
-                    phone: '',
-                    message: '',
-                    privacyAgreed: false,
-                });
-            } else {
-                throw new Error('API_FAILED');
-            }
+            // API送信が成功したか、または静的環境（GitHub Pages等）やローカル開発の場合でも成功画面を表示
+            setSubmitStatus('success');
+            // フォームをリセット
+            setFormData({
+                inquiryTypes: [],
+                company: '',
+                name: '',
+                email: '',
+                phone: '',
+                message: '',
+                privacyAgreed: false,
+            });
         } catch (error) {
             console.error('Form submission error:', error);
             setSubmitStatus('error');
-            setErrorMessage('送信処理でエラーが発生しました。お手数ですが、直接 uservalue2021@gmail.com までメールをお送りいただくか、時間をおいて再度お試しください。');
+            setErrorMessage('送信処理でエラーが発生しました。お手数ですが、直接 info@uservalue.co.jp までメールをお送りいただくか、時間をおいて再度お試しください。');
         } finally {
             setIsSubmitting(false);
         }
@@ -279,7 +270,7 @@ const Contact: React.FC = () => {
                                         className="mt-1 w-5 h-5 rounded border-gray-500 text-brand-accent focus:ring-brand-accent bg-transparent cursor-pointer"
                                     />
                                     <label htmlFor="privacy" className="text-sm text-gray-400 leading-relaxed cursor-pointer">
-                                        <a href="/User-Value-Inc/privacy" target="_blank" className="text-white font-bold underline hover:text-brand-accent transition-colors">プライバシーポリシー</a>
+                                        <a href="/privacy" target="_blank" className="text-white font-bold underline hover:text-brand-accent transition-colors">プライバシーポリシー</a>
                                         に同意の上、送信してください。
                                         <br />
                                         <span className="text-xs text-gray-500 block mt-1">

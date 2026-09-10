@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -7,10 +8,8 @@ export default defineConfig(({ mode, command }) => {
   // Vercelでは base: '/' を使用
   // GitHub Pagesでは '/User-Value-Inc/' を使用 (ビルド時のみ)
   // ローカル開発 (serve) では '/' を使用して画像を正しく表示
-  const isProdBuild = command === 'build';
-  const isVercel = process.env.VERCEL;
-
-  const base = isProdBuild && !isVercel ? '/User-Value-Inc/' : '/';
+  // カスタムドメイン https://uservalue.jp/ を使用するため base は常に '/'
+  const base = '/';
 
   return {
     base,
@@ -20,6 +19,22 @@ export default defineConfig(({ mode, command }) => {
     },
     plugins: [
       react(),
+      {
+        name: 'generate-spa-404',
+        closeBundle() {
+          const distPath = path.resolve(__dirname, 'dist');
+          const indexPath = path.join(distPath, 'index.html');
+          const notFoundPath = path.join(distPath, '404.html');
+          try {
+            if (fs.existsSync(indexPath)) {
+              fs.copyFileSync(indexPath, notFoundPath);
+              console.log('[SPA Routing] Successfully copied index.html to 404.html for GitHub Pages support.');
+            }
+          } catch (err) {
+            console.error('[SPA Routing] Failed to copy index.html to 404.html:', err);
+          }
+        }
+      },
       {
         name: 'mock-contact-api',
         configureServer(server) {
