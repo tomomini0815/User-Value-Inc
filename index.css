@@ -36,11 +36,13 @@
   --white: #ffffff;
   --black: #000000;
   --transparent: transparent;
-  --blue-500: #0ea5e9;
-  --indigo-300: #818cf8;
-  --blue-300: #38bdf8;
-  --violet-200: #c084fc;
-  --blue-400: #22d3ee;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
 }
 
 body {
@@ -97,6 +99,16 @@ body {
 
 .text-stroke-cyan {
   -webkit-text-stroke: 1.5px #38bdf8;
+  color: transparent;
+}
+
+.text-stroke-turquoise {
+  -webkit-text-stroke: 1.5px #2dd4bf;
+  color: transparent;
+}
+
+.text-stroke-emerald {
+  -webkit-text-stroke: 1.5px #34d399;
   color: transparent;
 }
 
