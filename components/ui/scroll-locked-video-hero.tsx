@@ -93,8 +93,8 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
   return (
     <section className="relative isolate w-full flex-grow flex flex-col justify-center overflow-hidden bg-[#04080e]/90 p-1 sm:p-2 md:p-3" aria-label="User Value creative process">
       {/* Dynamic ambient backlights matching the glass orb and water ripple */}
-      <div className="absolute -top-32 left-1/4 h-[450px] w-[450px] rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute -bottom-28 right-1/4 h-[450px] w-[450px] rounded-full bg-indigo-500/15 blur-[150px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />
+      <div className="absolute -top-32 left-1/4 h-[450px] w-[450px] rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none" />
+      <div className="absolute -bottom-28 right-1/4 h-[450px] w-[450px] rounded-full bg-indigo-500/15 blur-[150px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_35%,rgba(56,189,248,.18),transparent_45%),radial-gradient(circle_at_75%_65%,rgba(129,140,248,.14),transparent_50%),linear-gradient(115deg,rgba(4,8,15,.96),rgba(6,16,28,.65),rgba(3,6,12,.97))]" />
 
       <div className="relative mx-auto grid w-full min-h-[660px] lg:min-h-[720px] xl:min-h-[760px] grid-cols-1 overflow-hidden rounded-[2rem] border border-cyan-500/25 bg-[#06101c]/80 shadow-[0_30px_90px_rgba(0,0,0,.7),inset_0_1px_1px_rgba(255,255,255,.15)] backdrop-blur-md lg:grid-cols-[1.25fr_.75fr]">
