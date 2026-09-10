@@ -78,8 +78,7 @@ const Strength: React.FC<StrengthProps> = ({ onNavigate }) => {
         {/* Section Header */}
         <div className="border-b border-cyan-500/20 pb-12 mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-4 font-semibold">
-              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#38bdf8]" />
+            <div className="font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-4 font-semibold">
               // 02 STRENGTH ｜ 選ばれる理由
             </div>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">

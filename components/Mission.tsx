@@ -26,8 +26,7 @@ const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <p className="font-mono text-sm text-cyan-400 mb-6 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#38bdf8]"></span>
+                            <p className="font-mono text-sm text-cyan-400 mb-6 flex items-center">
                                 // OUR MISSION <span className="text-cyan-300/40 ml-2 text-xs tracking-wider">ミッション</span>
                             </p>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.2] tracking-tighter mb-8">

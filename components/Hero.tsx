@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 border-b border-cyan-500/20 bg-black/40 backdrop-blur-md">
                     <div className="p-3.5 md:p-5 border-r border-cyan-500/20 flex items-center">
                         <span className="font-mono text-[11px] text-cyan-300 tracking-wider flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">OPEN</span>
                             <span className="font-sans font-medium text-white">ご相談・新規案件 受付中</span>
                         </span>
                     </div>

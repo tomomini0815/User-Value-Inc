@@ -28,8 +28,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                         <div className="p-6 md:p-12 lg:p-24 border-b lg:border-b-0 lg:border-r border-cyan-500/20 flex flex-col justify-between lg:min-h-[60vh] overflow-hidden relative">
                             <div className="absolute top-1/2 -left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
                             <div className="w-full relative z-10">
-                                <h2 className="font-mono text-cyan-400 text-xs mb-4 md:mb-6 tracking-[0.25em] uppercase flex items-center gap-2 font-semibold">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                                <h2 className="font-mono text-cyan-400 text-xs mb-4 md:mb-6 tracking-[0.25em] uppercase font-semibold">
                                     // 01 Philosophy
                                 </h2>
 
@@ -46,8 +45,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                         {/* Right Block: Content */}
                         <div className="grid grid-rows-2">
                             <div className="p-6 md:p-12 border-b border-cyan-500/20 flex flex-col justify-center bg-black/20">
-                                <h4 className="font-display text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center gap-3">
-                                    <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+                                <h4 className="font-display text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 leading-snug">
                                     直感的な操作性と機能美が、<br />意思決定を加速させる。
                                 </h4>
                                 <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans">
@@ -103,8 +101,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1520px]">
                     <div className="border-b border-cyan-500/20 pb-12 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-4 font-semibold">
-                                <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                            <div className="font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-4 font-semibold">
                                 // 02 SERVICES ｜ サービス案内
                             </div>
                             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
@@ -192,8 +189,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <div className="border-b border-cyan-500/20 bg-[#03070d]/90 backdrop-blur-md z-20">
                         <div className="container mx-auto border-x border-cyan-500/20 px-6 py-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-2">
                             <div>
-                                <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-1 font-semibold">
-                                    <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                                <div className="font-mono text-xs text-cyan-400 tracking-[0.25em] uppercase mb-1 font-semibold">
                                     // 03 WORKS ｜ 制作・運営実績
                                 </div>
                                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white">

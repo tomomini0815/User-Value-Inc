@@ -102,11 +102,10 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
         {/* Left Side: Immersive Video Screen with Iridescent Glass Framing */}
         <div className="relative min-h-[460px] lg:min-h-full overflow-hidden border-b border-cyan-500/20 lg:border-b-0 lg:border-r">
           <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between p-5 md:p-8">
-            <span className="font-sans text-xs tracking-wider text-cyan-200/90 flex items-center gap-2 font-medium">
-              <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#38bdf8] animate-ping" />
-              USER VALUE ｜ ものづくりの姿勢
+            <span className="font-mono text-xs tracking-widest text-cyan-300/90 font-semibold uppercase">
+              // PROCESS ｜ ものづくりの姿勢
             </span>
-            <span className="rounded-full border border-cyan-400/30 bg-cyan-950/60 px-3.5 py-1 text-xs font-mono text-cyan-300 backdrop-blur-sm">
+            <span className="rounded-lg border border-cyan-400/30 bg-cyan-950/70 px-3.5 py-1 text-xs font-mono text-cyan-300 backdrop-blur-sm">
               STEP {tracks[active].id} / 04
             </span>
           </div>
@@ -142,12 +141,22 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-cyan-950/85 border border-cyan-400/40 backdrop-blur-md shadow-[0_0_15px_rgba(56,189,248,0.25)]">
-                    <Sparkles size={12} className="text-cyan-300" />
-                    <span className="font-sans text-xs font-semibold text-cyan-200">
-                      {tracks[active].step} ｜ {tracks[active].category}
+                  {/* くりぬき文字による大迫力＆プロ仕様のステップヘッダー */}
+                  <div className="flex items-baseline gap-3 sm:gap-4 mb-2">
+                    <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-stroke-cyan tracking-tighter leading-none select-none drop-shadow-[0_0_20px_rgba(56,189,248,0.35)]">
+                      {tracks[active].id}
                     </span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs font-bold text-cyan-300 tracking-wider uppercase">
+                        {tracks[active].step}
+                      </span>
+                      <span className="text-cyan-500/40 text-xs">/</span>
+                      <span className="font-sans text-xs text-slate-300 font-medium">
+                        {tracks[active].category}
+                      </span>
+                    </div>
                   </div>
+
                   <h1 className="max-w-[44rem] font-display text-2xl font-extrabold leading-[1.04] tracking-[-.035em] text-white sm:text-4xl md:text-[2.6rem] lg:text-[3.1rem] whitespace-pre-line uppercase">
                     {tracks[active].headlineEn}
                   </h1>
@@ -168,11 +177,13 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
           <div>
             <div className="mb-6 lg:mb-8 flex items-start justify-between">
               <div>
-                <p className="font-sans text-xs tracking-widest text-cyan-400 font-bold flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#38bdf8]" />
-                  想いをカタチにする4つのステップ
+                <p className="font-mono text-xs tracking-widest text-cyan-400 font-bold uppercase">
+                  // 04 STEPS TO REALIZATION
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300 max-w-md">
+                <h3 className="mt-1 font-display text-lg sm:text-xl font-bold text-white tracking-tight">
+                  想いをカタチにする4つのステップ
+                </h3>
+                <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-slate-300 max-w-md">
                   対話から始まり、長く愛されるプロダクトになるまで、誠実に伴走します。
                 </p>
               </div>
@@ -195,31 +206,51 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
                   <button
                     key={track.id}
                     onClick={() => selectTrack(index)}
-                    className={`group relative flex w-full flex-col gap-1 rounded-xl p-3.5 lg:p-4 text-left transition-all duration-300 border ${
+                    className={`group relative flex w-full flex-col gap-1.5 rounded-xl p-3.5 sm:p-4 text-left transition-all duration-300 border overflow-hidden ${
                       selected
-                        ? 'border-cyan-400/50 bg-gradient-to-r from-cyan-950/80 to-indigo-950/60 shadow-[0_0_25px_rgba(56,189,248,0.2)] scale-[1.01]'
-                        : 'border-white/10 bg-white/[0.02] opacity-70 hover:opacity-100 hover:border-cyan-400/30 hover:bg-white/[0.05]'
+                        ? 'border-cyan-400/60 bg-gradient-to-r from-cyan-950/80 via-slate-900/90 to-indigo-950/50 shadow-[0_0_30px_rgba(56,189,248,0.2)] scale-[1.01]'
+                        : 'border-white/10 bg-white/[0.02] opacity-75 hover:opacity-100 hover:border-cyan-400/40 hover:bg-white/[0.05]'
                     }`}
                   >
-                    <div className="flex items-center gap-3.5">
-                      <span
-                        className="h-2.5 w-2.5 shrink-0 rounded-full transition-all duration-300"
-                        style={{
-                          backgroundColor: track.color,
-                          boxShadow: selected ? `0 0 14px ${track.color}` : 'none',
-                          transform: selected ? 'scale(1.3)' : 'scale(1)'
-                        }}
-                      />
-                      <span className="font-mono text-xs text-cyan-300/70 font-semibold">{track.id}</span>
-                      <span className="font-sans text-base lg:text-lg font-bold tracking-tight text-white group-hover:text-cyan-200 transition-colors">
-                        {track.title}
+                    {/* 背景にうっすら浮かぶ巨大なくりぬき数字（ウォーターマーク） */}
+                    <span className={`absolute right-3 -bottom-3 font-display text-5xl sm:text-6xl font-black tracking-tighter select-none pointer-events-none transition-all duration-500 ${
+                      selected ? 'text-stroke-cyan opacity-25 scale-105' : 'text-stroke-subtle opacity-10 group-hover:opacity-25'
+                    }`}>
+                      {track.id}
+                    </span>
+
+                    <div className="relative z-10 flex items-center gap-3.5">
+                      {/* くりぬき文字（アウトラインナンバー） */}
+                      <span className={`font-display text-2xl sm:text-3xl font-black tracking-tighter leading-none shrink-0 transition-all duration-300 ${
+                        selected 
+                          ? 'text-stroke-cyan drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]' 
+                          : 'text-stroke-white group-hover:text-stroke-cyan'
+                      }`}>
+                        {track.id}
                       </span>
-                      <span className="ml-auto font-sans text-xs tracking-wide text-slate-400">
-                        {track.category}
-                      </span>
+
+                      {/* 繊細な細いバー区切り */}
+                      <div className={`w-[1.5px] h-7 rounded-full transition-colors duration-300 ${
+                        selected ? 'bg-cyan-400/80 shadow-[0_0_8px_#38bdf8]' : 'bg-white/15 group-hover:bg-cyan-400/40'
+                      }`} />
+
+                      <div className="flex-grow min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-sans text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-cyan-200 transition-colors truncate">
+                            {track.title}
+                          </span>
+                          <span className="font-mono text-[11px] text-slate-400 shrink-0">
+                            {track.category}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-mono text-cyan-300/70 block mt-0.5">
+                          {track.step}
+                        </span>
+                      </div>
                     </div>
+
                     {selected && (
-                      <p className="mt-1 pl-6 text-xs sm:text-sm text-cyan-100/90 font-sans leading-relaxed animate-fadeIn">
+                      <p className="relative z-10 mt-1.5 pl-[3.25rem] text-xs sm:text-sm text-cyan-100/90 font-sans leading-relaxed">
                         {track.desc}
                       </p>
                     )}
