@@ -49,8 +49,23 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
+      {/* Ambient Orb Ripple Glow */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-white mix-blend-difference pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full bg-cyan-400/20 blur-md pointer-events-none z-[9998] hidden md:block"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        animate={{
+          scale: isHovering ? 2.5 : 1.2,
+          opacity: isHovering ? 0.6 : 0.3,
+        }}
+        transition={{ duration: 0.3 }}
+      />
+      <motion.div
+        className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_#38bdf8] pointer-events-none z-[9999] hidden md:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -59,7 +74,7 @@ const CustomCursor: React.FC = () => {
         }}
       />
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-white mix-blend-difference pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 rounded-full border border-cyan-400/40 pointer-events-none z-[9999] hidden md:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -67,11 +82,11 @@ const CustomCursor: React.FC = () => {
           translateY: "-50%",
         }}
         animate={{
-          width: isHovering ? 60 : 20,
-          height: isHovering ? 60 : 20,
-          opacity: 1,
-          scale: isHovering ? 1.1 : 1,
-          backgroundColor: isHovering ? 'rgba(255,255,255,1)' : 'transparent',
+          width: isHovering ? 56 : 22,
+          height: isHovering ? 56 : 22,
+          borderColor: isHovering ? 'rgba(56, 189, 248, 0.8)' : 'rgba(56, 189, 248, 0.35)',
+          backgroundColor: isHovering ? 'rgba(56, 189, 248, 0.08)' : 'transparent',
+          boxShadow: isHovering ? '0 0 20px rgba(56, 189, 248, 0.3)' : 'none',
         }}
         transition={{
           type: "spring",

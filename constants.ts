@@ -8,7 +8,6 @@ export const COMPANY_INFO: CompanyInfo & { email: string } = {
   establishment: "2021年2月",
   capital: "500万円",
   location: "Kanagawa, JP",
-  phone: "044-400-2258",
   representative: "恵良 友美",
   email: "uservalue2021@gmail.com"
 };
@@ -38,7 +37,7 @@ export const SERVICES: ServiceItem[] = [
     id: 's3',
     title: "UI/UX Design & Audit",
     titleJa: "UI/UXデザイン・監査",
-    description: "データと感性の融合。ヒートマップ分析やユーザーインタビューに基づき、離脱率を改善。ブランドの世界観を体現する美しいインターフェースデザインを提供します。",
+    description: "データと導線の融合。ユーザー行動分析に基づき、複雑な業務やダッシュボードの操作性を最適化。思考を妨げない直感的で洗練されたUI/UXデザインを提供します。",
     icon: Layers,
     // Abstract fluid art, digital aesthetics
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
@@ -59,6 +58,36 @@ export const SERVICES: ServiceItem[] = [
 export const PROJECTS: ProjectItem[] = [
   {
     id: 'p1',
+    title: "EarthScope",
+    description: "地球まるごと大探検・3Dインタラクティブ学習アプリ",
+    longDescription: "EarthScope（地球まるごと大探検）は、3D地球儀と世界地図を直感的に操作しながら、198カ国の歴史・文化・人口・経済・地理を学べる次世代EduTech Webアプリケーションです。\n\nWebGLによる立体的な地球儀の回転操作、入試頻出ポイントの解説、国別データ比較、クイズ機能やマイページでの学習進捗管理など、触れるたびに知的好奇心を刺激するリッチな学習体験を提供します。",
+    // EarthScope Apple device mockup
+    image: getImagePath("/images/earthscope-mockup-v2.jpg"),
+    url: "https://tomomini0815.github.io/Earth-Scope/",
+    tags: ["EduTech", "3D WebGL", "Interactive", "Learning"]
+  },
+  {
+    id: 'p2',
+    title: "株Navi",
+    description: "株式投資・テクニカル分析の総合情報ダッシュボード",
+    longDescription: "株Navi（Stock Scout Hub）は、市場の主要指数から個別銘柄の需給・テクニカルシグナルまでをリアルタイムに集約・分析する総合金融ダッシュボードです。\n\n日経平均やS&P500、為替・暗号資産のライブ市況、移動平均・RSI・MACD・ボリンジャーバンド等を組み合わせた独自アルゴリズムによるスクリーニング判定、大口ファンド動向の追跡など、個人投資家の迅速な意思決定を強力にサポートします。",
+    // Stock Scout Hub Apple device mockup
+    image: getImagePath("/images/stockscout-mockup.jpg"),
+    url: "https://stock-scout-hub-nhis.vercel.app/",
+    tags: ["FinTech", "Analytics", "Real-time Dashboard", "Trading"]
+  },
+  {
+    id: 'p3',
+    title: "Ainance",
+    description: "経理業務効率化Webアプリケーション",
+    longDescription: "Ainanceは、個人事業主・フリーランス・小規模事業者のための経理業務効率化Webアプリケーションです。\n\nレシートのOCR自動読み取り、音声入力による取引記録、収支の可視化、確定申告サポートなど、日々の経理作業に欠かせない機能を一つのプラットフォームで提供。煩雑な会計業務をシンプルに、もっとスマートに管理できます。",
+    // Ainance Apple device mockup v2
+    image: getImagePath("/images/ainance-mockup-v2.jpg"),
+    url: "https://ainance.jp",
+    tags: ["Fintech", "Predictive AI", "Data Viz"]
+  },
+  {
+    id: 'p4',
     title: "Journify",
     description: "自己管理Webアプリケーション",
     longDescription: "Journifyは、「書く」「振り返る」「達成する」を一つにつなげる次世代の自己管理Webアプリケーションです。\n\n日々の記録と目標管理を統合し、あなたの成長を可視化するパーソナルダッシュボード。ジャーナリング（日記）で思考を整理し、目標設定で方向性を定め、タスク管理で着実に前進し、プロジェクト管理で大きな成果を実現できます。",
@@ -69,22 +98,12 @@ export const PROJECTS: ProjectItem[] = [
     tags: ["Travel Tech", "AI Generation", "Map Integration"]
   },
   {
-    id: 'p2',
-    title: "Ainance",
-    description: "経理業務効率化Webアプリケーション",
-    longDescription: "Ainanceは、個人事業主・フリーランス・小規模事業者のための経理業務効率化Webアプリケーションです。\n\nレシートのOCR自動読み取り、音声入力による取引記録、収支の可視化、確定申告サポートなど、日々の経理作業に欠かせない機能を一つのプラットフォームで提供。煩雑な会計業務をシンプルに、もっとスマートに管理できます。",
-    // Ainance dashboard screenshot
-    image: getImagePath("/images/ainance-mockup.png"),
-    url: "https://ainance.jp",
-    tags: ["Fintech", "Predictive AI", "Data Viz"]
-  },
-  {
-    id: 'p3',
+    id: 'p5',
     title: "LifeBridge",
     description: "人生の転機に寄り添うAIパートナー",
     longDescription: "人生には、結婚、出産、転職、引越し、介護といった大きな転機が訪れます。これらのライフイベントには、想像以上に多くの行政手続きが必要で、複雑な申請フロー、厳しい期限、見逃しやすい給付金など、多くの課題が存在します。\n\nLifeBridgeは、こうした課題を解決するために開発された、次世代のライフイベント支援プラットフォームです。",
-    // LifeBridge dashboard screenshot
-    image: getImagePath("/images/lifebridge-mockup.png"),
+    // LifeBridge Apple device mockup v2
+    image: getImagePath("/images/lifebridge-mockup-v2.jpg"),
     url: "https://lifebridgeapp.jp",
     tags: ["Life Event", "AI Assistant", "Gov Tech"]
   }

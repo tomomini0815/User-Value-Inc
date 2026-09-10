@@ -14,13 +14,15 @@ export default {
       },
       colors: {
         brand: {
-          black: '#050505',
-          dark: '#0a0a0a',
-          gray: '#141414',
-          lightGray: '#2a2a2a',
-          accent: '#6366f1',
-          gold: '#d4af37',
-          surface: '#0f0f0f'
+          black: '#03070d',
+          dark: '#050e1a',
+          gray: '#0d1a29',
+          lightGray: '#1b2f47',
+          accent: '#38bdf8',
+          cyan: '#22d3ee',
+          indigo: '#818cf8',
+          gold: '#38bdf8',
+          surface: '#071322'
         }
       },
       animation: {

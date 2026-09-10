@@ -9,10 +9,11 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     return (
-        <footer className="fixed bottom-0 left-0 w-full h-[85vh] md:h-[65vh] bg-[#050505] text-white flex flex-col justify-between p-6 md:p-12 z-0">
+        <footer className="fixed bottom-0 left-0 w-full h-[85vh] md:h-[65vh] bg-[#02050a] text-white flex flex-col justify-between p-6 md:p-12 z-0">
             {/* Ambient Gradient Background */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-accent/20 rounded-full blur-[120px]" />
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/15 rounded-full blur-[140px]" />
+                <div className="absolute -bottom-20 right-10 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[130px]" />
             </div>
 
             <div className="container mx-auto h-full flex flex-col relative z-10 pt-20">
@@ -45,7 +46,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-white/10 pt-8 mt-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-cyan-500/20 pt-8 mt-12">
                     <div className="mb-6 md:mb-0">
                         <h3 className="text-4xl font-display font-bold mb-2">{COMPANY_INFO.nameEn}</h3>
                         <p className="text-xs text-gray-500 uppercase tracking-widest font-mono">

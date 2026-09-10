@@ -6,16 +6,18 @@
   --font-display: "Syne", sans-serif;
   --font-mono: "Space Grotesk", monospace;
 
-  --color-brand-black: #050505;
-  --color-brand-dark: #0a0a0a;
-  --color-brand-gray: #141414;
-  --color-brand-lightGray: #2a2a2a;
-  --color-brand-accent: #6366f1;
-  --color-brand-gold: #d4af37;
-  --color-brand-surface: #0f0f0f;
+  --color-brand-black: #03070d;
+  --color-brand-dark: #050e1a;
+  --color-brand-gray: #0d1a29;
+  --color-brand-lightGray: #1b2f47;
+  --color-brand-accent: #38bdf8;
+  --color-brand-cyan: #22d3ee;
+  --color-brand-indigo: #818cf8;
+  --color-brand-gold: #38bdf8;
+  --color-brand-surface: #071322;
 
   --animate-spin-slow: spin 30s linear infinite;
-  --animate-aurora: aurora 60s linear infinite;
+  --animate-aurora: aurora 40s linear infinite;
 
   @keyframes aurora {
     from {
@@ -34,15 +36,15 @@
   --white: #ffffff;
   --black: #000000;
   --transparent: transparent;
-  --blue-500: #3b82f6;
-  --indigo-300: #a5b4fc;
-  --blue-300: #93c5fd;
-  --violet-200: #ddd6fe;
-  --blue-400: #60a5fa;
+  --blue-500: #0ea5e9;
+  --indigo-300: #818cf8;
+  --blue-300: #38bdf8;
+  --violet-200: #c084fc;
+  --blue-400: #22d3ee;
 }
 
 body {
-  background-color: #050505;
+  background-color: #03070d;
   color: #ffffff;
   cursor: none;
   overflow-x: hidden;
@@ -89,8 +91,8 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
+  background: rgba(56, 189, 248, 0.35);
+  color: #ffffff;
 }
 
 html {
@@ -112,25 +114,43 @@ html {
     line-height: calc(var(--md-height) - 5px) !important;
   }
 }
+
 @keyframes gradient-x {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .animate-gradient-x {
-    background-size: 200% 200%;
-    animation: gradient-x 3s ease infinite;
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
 }
 
 .custom-grayscale {
-    filter: grayscale(100%);
-    transition: filter 0.7s ease, transform 0.7s ease;
+  filter: grayscale(100%);
+  transition: filter 0.7s ease, transform 0.7s ease;
 }
 
 .group:hover .custom-grayscale {
-    filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+/* Glass & Ripple Visual Utilities matching the Video Orb */
+.glass-panel {
+  background: rgba(6, 17, 31, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+}
+
+.orb-glow {
+  box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.35);
 }

@@ -10,33 +10,33 @@ interface MissionProps {
 
 const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
     return (
-        <section className="relative bg-[#050505] border-b border-white/10 overflow-hidden">
+        <section className="relative bg-[#03070d] border-b border-cyan-500/20 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-            <div className="container mx-auto border-x border-white/10 relative z-10">
+            <div className="container mx-auto border-x border-cyan-500/20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[400px]">
 
                     {/* Mission Text Area */}
-                    <div className="lg:col-span-8 p-10 md:p-16 lg:p-20 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center">
+                    <div className="lg:col-span-8 p-10 md:p-16 lg:p-20 border-b lg:border-b-0 lg:border-r border-cyan-500/20 flex flex-col justify-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <p className="font-mono text-sm text-brand-accent mb-6 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-brand-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
-                                // OUR MISSION <span className="text-white/30 ml-2 text-xs tracking-wider">ミッション</span>
+                            <p className="font-mono text-sm text-cyan-400 mb-6 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#38bdf8]"></span>
+                                // OUR MISSION <span className="text-cyan-300/40 ml-2 text-xs tracking-wider">ミッション</span>
                             </p>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.2] tracking-tighter mb-8">
                                 デジタル時代の基盤を、<br className="hidden md:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-white to-gray-500 animate-gradient-x">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-white to-sky-300 animate-gradient-x">
                                     美しく、機能的に。
                                 </span>
                             </h2>
-                            <p className="text-white/60 text-sm md:text-base lg:text-lg font-light max-w-2xl leading-relaxed border-l-2 border-white/10 pl-6">
+                            <p className="text-slate-300 text-sm md:text-base lg:text-lg font-light max-w-2xl leading-relaxed border-l-2 border-cyan-500/30 pl-6">
                                 『あったらいいな』を、当たり前の景色に。
                             </p>
                         </motion.div>
@@ -44,7 +44,7 @@ const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
 
                     {/* CTA Area */}
                     <div
-                        className="lg:col-span-4 group relative overflow-hidden cursor-pointer border-l border-white/10"
+                        className="lg:col-span-4 group relative overflow-hidden cursor-pointer border-l border-cyan-500/20 bg-black/30"
                         onClick={() => onNavigate?.('contact')}
                         tabIndex={0}
                         role="button"
@@ -55,7 +55,7 @@ const Mission: React.FC<MissionProps> = ({ onNavigate }) => {
                             }
                         }}
                     >
-                        <div className="absolute inset-0 bg-white group-hover:bg-brand-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-sky-400 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out shadow-[0_0_30px_rgba(56,189,248,0.5)]"></div>
 
                         <div className="relative h-full p-10 md:p-16 flex flex-col justify-between items-start z-10">
                             <motion.div

@@ -18,7 +18,28 @@ export default defineConfig(({ mode, command }) => {
       port: 3000,
       host: '0.0.0.0',
     },
-    plugins: [react()],
+    plugins: [
+      react(),
+      {
+        name: 'mock-contact-api',
+        configureServer(server) {
+          server.middlewares.use('/api/contact', (req, res) => {
+            if (req.method === 'POST') {
+              let body = '';
+              req.on('data', chunk => { body += chunk; });
+              req.on('end', () => {
+                console.log('[Dev Contact API received]:', body);
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: true, message: 'Inquiry received in dev mode' }));
+              });
+            } else {
+              res.writeHead(200, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ status: 'ok' }));
+            }
+          });
+        }
+      }
+    ],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)

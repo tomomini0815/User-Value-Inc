@@ -10,7 +10,7 @@ export interface CompanyInfo {
   establishment: string;
   capital: string;
   location: string;
-  phone: string;
+  phone?: string;
   representative: string;
 }
 

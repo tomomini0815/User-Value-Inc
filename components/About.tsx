@@ -58,10 +58,6 @@ const About: React.FC = () => {
                         <dt className="text-gray-500 text-sm uppercase tracking-wider">Location</dt>
                         <dd className="md:col-span-2 text-lg">{COMPANY_INFO.location}</dd>
                     </div>
-                     <div className="grid grid-cols-1 md:grid-cols-3 py-6 border-b border-white/10 gap-2">
-                        <dt className="text-gray-500 text-sm uppercase tracking-wider">Phone</dt>
-                        <dd className="md:col-span-2 text-lg font-mono">{COMPANY_INFO.phone}</dd>
-                    </div>
                 </dl>
              </div>
           </div>

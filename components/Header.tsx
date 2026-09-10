@@ -22,32 +22,33 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-between items-center text-white bg-[#050505]/30 backdrop-blur-md border-b border-white/10 transition-all duration-300 shadow-lg"
+        className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-between items-center text-white bg-[#03070d]/60 backdrop-blur-md border-b border-cyan-500/20 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
       >
         <div className="pointer-events-auto">
           <button
             onClick={() => handleNavClick('home')}
-            className="font-display font-bold text-xl tracking-tighter hover:opacity-70 transition-opacity"
+            className="font-display font-bold text-xl tracking-tighter hover:text-cyan-300 transition-colors flex items-center gap-2"
           >
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
             {COMPANY_INFO.nameEn.toUpperCase()}
           </button>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1 pointer-events-auto">
+        <nav className="hidden md:flex items-center gap-1 pointer-events-auto bg-black/40 p-1.5 rounded-full border border-cyan-500/20 backdrop-blur-md">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`
-                  relative px-6 py-2.5 rounded-full text-xs font-medium uppercase tracking-widest transition-all duration-300 ease-out
-                  ${currentPage === item.id ? 'bg-white text-black' : 'text-gray-300 hover:text-white hover:bg-white/10'}
+                  relative px-6 py-2 rounded-full text-xs font-medium uppercase tracking-widest transition-all duration-300 ease-out
+                  ${currentPage === item.id ? 'bg-gradient-to-r from-cyan-400 to-sky-400 text-black font-semibold shadow-[0_0_15px_rgba(56,189,248,0.4)]' : 'text-slate-300 hover:text-white hover:bg-white/10'}
               `}
             >
               <div className="flex flex-col items-center gap-0.5">
                 <span>{item.label}</span>
                 {item.labelJa && (
-                  <span className="text-[10px] font-normal normal-case tracking-normal opacity-70">
+                  <span className="text-[9px] font-normal normal-case tracking-normal opacity-80">
                     {item.labelJa}
                   </span>
                 )}
@@ -59,10 +60,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         <div className="flex items-center gap-4 pointer-events-auto">
           <button
             onClick={() => handleNavClick('contact')}
-            className="hidden md:flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 group overflow-hidden relative"
+            className="hidden md:flex items-center gap-2 text-xs font-mono uppercase tracking-widest border border-cyan-400/30 bg-cyan-950/20 px-6 py-2.5 rounded-full hover:bg-gradient-to-r hover:from-cyan-400 hover:to-sky-400 hover:text-black hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-300 group overflow-hidden relative"
           >
-            <span className="relative z-10">お問い合わせ</span>
-            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            <span className="relative z-10 font-sans font-medium">お問い合わせ</span>
           </button>
 
           {/* Mobile Menu Trigger */}

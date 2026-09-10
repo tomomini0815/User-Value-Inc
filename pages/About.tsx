@@ -100,15 +100,15 @@ const About: React.FC = () => {
                                     デジタルで、<br />
                                     <span className="text-gray-500">想いを形に。</span>
                                 </h3>
-                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light mb-6 md:mb-8">
+                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light mb-6 md:mb-8">
                                     User Value Inc.は、あなたのビジョンを実現するデジタルパートナーです。<br />
                                     「こんなサービスがあったらいいな」という想いを、<br />
-                                    使いやすく、美しいプロダクトに変えていきます。
+                                    直感的に扱え、業務効率を最大化する洗練されたプロダクトに変えていきます。
                                 </p>
                                 <p className="text-base md:text-lg text-gray-400 leading-relaxed font-light mb-6 md:mb-8">
                                     大切にしているのは、お客様との対話と、丁寧なものづくり。
                                     <br /><br />
-                                    最新の技術と、心を動かすデザインを組み合わせて、
+                                    最新の技術と、直感的で明快なインターフェース設計を組み合わせて、
                                     あなたのビジネスに本当に必要なものを一緒に考え、作り上げていきます。
                                     小さなアイデアから、大きな変化まで。私たちは、あなたの成功を全力でサポートします。
                                 </p>
@@ -126,8 +126,8 @@ const About: React.FC = () => {
                                     </div>
                                     <div className="p-6 bg-white/5 border border-white/5 rounded-lg hover:bg-white/10 transition-colors duration-300">
                                         <Globe className="w-8 h-8 text-brand-accent mb-4" />
-                                        <h4 className="font-bold mb-2 text-white">使いやすいデザイン</h4>
-                                        <p className="text-sm text-gray-400">誰でも直感的に使える、美しいデザインを心がけています。お客様の声を大切に、使いやすさを追求します。</p>
+                                        <h4 className="font-bold mb-2 text-white">直感的で機能的なUI/UX</h4>
+                                        <p className="text-sm text-gray-400">誰でも直感的に迷わず操作できる機能美を追求しています。日々の業務効率と意思決定スピードを高めます。</p>
                                     </div>
                                 </div>
                             </section>
@@ -141,7 +141,6 @@ const About: React.FC = () => {
                                         { label: 'Capital', value: COMPANY_INFO.capital },
                                         { label: 'Headquarters', value: COMPANY_INFO.location },
                                         { label: 'Email', value: COMPANY_INFO.email },
-                                        { label: 'Phone', value: COMPANY_INFO.phone },
                                         { label: 'Main Bank', value: '三菱UFJ銀行 新百合ヶ丘支店' },
                                     ].map((row, i) => (
                                         <div key={i} className="py-6 border-b border-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 group hover:bg-white/5 transition-colors px-2 cursor-default">
