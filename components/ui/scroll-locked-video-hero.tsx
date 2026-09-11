@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Pause, Play, SkipBack, SkipForward, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Pause, Play, SkipBack, SkipForward, Sparkles, RefreshCw, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Track = {
@@ -65,7 +65,16 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(true);
-  const [muted, setMuted] = useState(true);
+  const [autoCycle, setAutoCycle] = useState(true);
+
+  // 4ステップの自動送り（6秒周期）
+  useEffect(() => {
+    if (!autoCycle) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % tracks.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [autoCycle]);
 
   const selectTrack = (index: number) => setActive((index + tracks.length) % tracks.length);
   const togglePlayback = () => {
@@ -73,12 +82,6 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
     if (!video) return;
     if (video.paused) { void video.play(); setPlaying(true); }
     else { video.pause(); setPlaying(false); }
-  };
-  const toggleMute = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = !video.muted;
-    setMuted(video.muted);
   };
   const handleMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -285,13 +288,28 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
               </button>
             </div>
 
-            <button
-              onClick={toggleMute}
-              className="flex items-center gap-2 font-sans text-xs tracking-wider text-cyan-200/80 transition hover:text-white border border-cyan-400/30 px-3.5 py-1.5 rounded-full bg-cyan-950/40 hover:bg-cyan-900/50"
-            >
-              {muted ? <VolumeX size={15} /> : <Volume2 size={15} />}
-              {muted ? '消音中' : '音声オン'}
-            </button>
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <button
+                onClick={() => setAutoCycle(!autoCycle)}
+                className={`flex items-center gap-1.5 font-mono text-[11px] tracking-wider px-3 py-1.5 rounded-full border transition-all ${
+                  autoCycle
+                    ? 'border-cyan-400/40 bg-cyan-950/70 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.2)]'
+                    : 'border-slate-700/60 bg-black/40 text-slate-400 hover:text-slate-200'
+                }`}
+                title={autoCycle ? "ステップ自動送りを停止" : "ステップ自動送りを開始"}
+              >
+                <RefreshCw size={12} className={autoCycle ? "animate-spin" : ""} style={{ animationDuration: '7s' }} />
+                <span>AUTO {autoCycle ? 'ON' : 'OFF'}</span>
+              </button>
+
+              <a
+                href="#contact"
+                className="flex items-center gap-1.5 font-sans text-xs tracking-wider text-white border border-cyan-400/30 hover:border-cyan-400 px-3 sm:px-3.5 py-1.5 rounded-full bg-cyan-950/50 hover:bg-cyan-900/60 transition-all shadow-[0_0_12px_rgba(56,189,248,0.12)] whitespace-nowrap"
+              >
+                <span>無料相談</span>
+                <ArrowRight size={12} className="text-cyan-400" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
