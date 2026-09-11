@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Pause, Play, SkipBack, SkipForward, Sparkles, RefreshCw, ArrowRight } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Pause, Play, SkipBack, SkipForward, Sparkles, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Track = {
@@ -65,16 +65,6 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(true);
-  const [autoCycle, setAutoCycle] = useState(true);
-
-  // 4ステップの自動送り（6秒周期）
-  useEffect(() => {
-    if (!autoCycle) return;
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % tracks.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [autoCycle]);
 
   const selectTrack = (index: number) => setActive((index + tracks.length) % tracks.length);
   const togglePlayback = () => {
@@ -288,28 +278,13 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
               </button>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-2.5">
-              <button
-                onClick={() => setAutoCycle(!autoCycle)}
-                className={`flex items-center gap-1.5 font-mono text-[11px] tracking-wider px-3 py-1.5 rounded-full border transition-all ${
-                  autoCycle
-                    ? 'border-cyan-400/40 bg-cyan-950/70 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.2)]'
-                    : 'border-slate-700/60 bg-black/40 text-slate-400 hover:text-slate-200'
-                }`}
-                title={autoCycle ? "ステップ自動送りを停止" : "ステップ自動送りを開始"}
-              >
-                <RefreshCw size={12} className={autoCycle ? "animate-spin" : ""} style={{ animationDuration: '7s' }} />
-                <span>AUTO {autoCycle ? 'ON' : 'OFF'}</span>
-              </button>
-
-              <a
-                href="#contact"
-                className="flex items-center gap-1.5 font-sans text-xs tracking-wider text-white border border-cyan-400/30 hover:border-cyan-400 px-3 sm:px-3.5 py-1.5 rounded-full bg-cyan-950/50 hover:bg-cyan-900/60 transition-all shadow-[0_0_12px_rgba(56,189,248,0.12)] whitespace-nowrap"
-              >
-                <span>無料相談</span>
-                <ArrowRight size={12} className="text-cyan-400" />
-              </a>
-            </div>
+            <a
+              href="#contact"
+              className="flex items-center gap-1.5 sm:gap-2 font-sans text-xs tracking-wider text-cyan-200 hover:text-white border border-cyan-400/35 hover:border-cyan-400 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-cyan-950/60 hover:bg-cyan-900/70 transition-all shadow-[0_0_12px_rgba(56,189,248,0.15)] whitespace-nowrap group"
+            >
+              <span>無料相談・お問い合わせ</span>
+              <ArrowRight size={13} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
+            </a>
           </div>
         </div>
       </div>
