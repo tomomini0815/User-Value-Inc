@@ -5,28 +5,28 @@ import MusicHero from './ui/scroll-locked-video-hero';
 
 const Hero: React.FC = () => {
     return (
-        <AuroraBackground className="!min-h-screen !h-auto !bg-[#020b0d] !justify-start pt-20 md:pt-24 border-b border-teal-500/20">
-            <div className="relative z-10 flex-grow flex flex-col w-full max-w-[1600px] mx-auto px-2 sm:px-4 md:px-6 min-h-[calc(100vh-6rem)] border-x border-teal-500/20">
-                <div className="grid grid-cols-2 md:grid-cols-4 border-b border-teal-500/20 bg-black/40 backdrop-blur-md">
-                    <div className="p-3.5 md:p-5 border-r border-teal-500/20 flex items-center">
-                        <span className="font-mono text-[11px] text-teal-300 tracking-wider flex items-center gap-2">
+        <AuroraBackground className="!min-h-screen !h-auto !bg-[#03070d] !justify-start pt-20 md:pt-24 border-b border-cyan-500/20">
+            <div className="relative z-10 flex-grow flex flex-col w-full max-w-[1600px] mx-auto px-2 sm:px-4 md:px-6 min-h-[calc(100vh-6rem)] border-x border-cyan-500/20">
+                <div className="grid grid-cols-2 md:grid-cols-4 border-b border-cyan-500/20 bg-black/40 backdrop-blur-md">
+                    <div className="p-3.5 md:p-5 border-r border-cyan-500/20 flex items-center">
+                        <span className="font-mono text-[11px] text-cyan-300 tracking-wider flex items-center gap-2">
                             <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">OPEN</span>
                             <span className="font-sans font-medium text-white">ご相談・新規案件 受付中</span>
                         </span>
                     </div>
-                    <div className="p-3.5 md:p-5 border-r border-teal-500/20 hidden md:flex items-center">
+                    <div className="p-3.5 md:p-5 border-r border-cyan-500/20 hidden md:flex items-center">
                         <span className="font-sans text-[11px] text-slate-300 tracking-wider">
                             Web & アプリ開発・UI/UXデザイン
                         </span>
                     </div>
-                    <div className="p-3.5 md:p-5 border-r border-teal-500/20 hidden md:flex items-center">
+                    <div className="p-3.5 md:p-5 border-r border-cyan-500/20 hidden md:flex items-center">
                         <span className="font-sans text-[11px] text-slate-400 tracking-wider">
                             神奈川・湘南 ｜ 2021年設立
                         </span>
                     </div>
                     <div className="p-3.5 md:p-5 flex items-center justify-end">
-                        <span className="font-sans text-[11px] text-teal-200/90 tracking-wider flex items-center gap-1.5 font-medium">
-                            詳しく見る <span className="text-teal-400 animate-bounce">↓</span>
+                        <span className="font-sans text-[11px] text-cyan-200/90 tracking-wider flex items-center gap-1.5 font-medium">
+                            詳しく見る <span className="text-cyan-400 animate-bounce">↓</span>
                         </span>
                     </div>
                 </div>
