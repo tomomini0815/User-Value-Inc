@@ -28,8 +28,11 @@ const Contact: React.FC = () => {
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
-    // Vercel API endpoint - Vercel Serverless Functionを使用
-    const API_ENDPOINT = '/api/contact';
+    // 自社専用Worker APIエンドポイント（環境変数またはデフォルトURL）
+    const API_ENDPOINT = import.meta.env.VITE_CONTACT_API_URL || 
+        (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+            ? '/api/contact' 
+            : 'https://user-value-contact-api.tomomini0815.workers.dev');
 
     const handleCheckboxChange = (value: string) => {
         setFormData(prev => ({
@@ -71,34 +74,31 @@ const Contact: React.FC = () => {
         setErrorMessage('');
 
         try {
-            // Vercel API Functionへの送信
-            let isSuccess = false;
-            try {
-                const response = await fetch(API_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        inquiryTypes: formData.inquiryTypes.join(', '),
-                        company: formData.company,
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        message: formData.message,
-                    }),
-                });
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    inquiryTypes: formData.inquiryTypes.join(', '),
+                    company: formData.company,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                }),
+            });
 
-                if (response.ok) {
-                    isSuccess = true;
-                }
-            } catch (netErr) {
-                console.warn('Network error or API unreachable, checking fallback:', netErr);
+            const data = await response.json().catch(() => null);
+
+            if (!response.ok) {
+                const errorMsg = data?.error || 'メール送信処理に失敗しました。お手数ですが、info@uservalue.jp まで直接ご連絡ください。';
+                throw new Error(errorMsg);
             }
 
-            // API送信が成功したか、または静的環境（GitHub Pages等）やローカル開発の場合でも成功画面を表示
+            // 送信成功
             setSubmitStatus('success');
-            // フォームをリセット
             setFormData({
                 inquiryTypes: [],
                 company: '',
@@ -108,10 +108,10 @@ const Contact: React.FC = () => {
                 message: '',
                 privacyAgreed: false,
             });
-        } catch (error) {
+        } catch (error: any) {
             console.error('Form submission error:', error);
             setSubmitStatus('error');
-            setErrorMessage('送信処理でエラーが発生しました。お手数ですが、直接 info@uservalue.co.jp までメールをお送りいただくか、時間をおいて再度お試しください。');
+            setErrorMessage(error.message || '送信処理中にエラーが発生しました。時間をおいて再度お試しいただくか、直接メールでお問い合わせください。');
         } finally {
             setIsSubmitting(false);
         }

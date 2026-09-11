@@ -1,0 +1,9 @@
+name = "user-value-contact-api"
+main = "index.ts"
+compatibility_date = "2024-09-01"
+
+# 環境変数は Cloudflare Dashboard の Settings > Variables、
+# または `npx wrangler secret put RESEND_API_KEY` で設定します。
+[vars]
+ADMIN_EMAIL = "info@uservalue.jp"
+SENDER_EMAIL = "User Value Inc. <noreply@uservalue.jp>"
