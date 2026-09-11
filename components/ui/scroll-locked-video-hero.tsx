@@ -58,9 +58,14 @@ const tracks: Track[] = [
 
 const VIDEO = '/hero-video.mp4';
 
-interface MusicHeroProps { title?: string }
+import { PageId } from '../../types';
 
-const MusicHero: React.FC<MusicHeroProps> = () => {
+interface MusicHeroProps {
+  title?: string;
+  onNavigate?: (page: PageId) => void;
+}
+
+const MusicHero: React.FC<MusicHeroProps> = ({ onNavigate }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -72,6 +77,15 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
     if (!video) return;
     if (video.paused) { void video.play(); setPlaying(true); }
     else { video.pause(); setPlaying(false); }
+  };
+  const handleContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('contact');
+    } else {
+      window.history.pushState(null, '', '/contact');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
   };
   const handleMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -278,13 +292,13 @@ const MusicHero: React.FC<MusicHeroProps> = () => {
               </button>
             </div>
 
-            <a
-              href="#contact"
-              className="flex items-center gap-1.5 sm:gap-2 font-sans text-xs tracking-wider text-cyan-200 hover:text-white border border-cyan-400/35 hover:border-cyan-400 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-cyan-950/60 hover:bg-cyan-900/70 transition-all shadow-[0_0_12px_rgba(56,189,248,0.15)] whitespace-nowrap group"
+            <button
+              onClick={handleContact}
+              className="flex items-center gap-1.5 sm:gap-2 font-sans text-xs tracking-wider text-cyan-200 hover:text-white border border-cyan-400/35 hover:border-cyan-400 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-cyan-950/60 hover:bg-cyan-900/70 transition-all shadow-[0_0_12px_rgba(56,189,248,0.15)] whitespace-nowrap group cursor-pointer"
             >
               <span>無料相談・お問い合わせ</span>
               <ArrowRight size={13} className="text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

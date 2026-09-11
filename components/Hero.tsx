@@ -2,19 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { AuroraBackground } from './ui/aurora-background';
 import MusicHero from './ui/scroll-locked-video-hero';
+import { PageId } from '../types';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+    onNavigate?: (page: PageId) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
     return (
         <AuroraBackground className="!min-h-screen !h-auto !bg-[#03070d] !justify-start pt-24 sm:pt-28 md:pt-28 border-b border-cyan-500/20">
             <div className="relative z-10 flex-grow flex flex-col w-full max-w-[1600px] mx-auto px-2 sm:px-4 md:px-6 min-h-[calc(100vh-6rem)] border-x border-cyan-500/20">
                 <div className="grid grid-cols-2 md:grid-cols-4 border-b border-cyan-500/20 bg-black/40 backdrop-blur-md">
-                    <div className="py-4 px-3.5 sm:py-4.5 sm:px-4 md:p-5 border-r border-cyan-500/20 flex items-center justify-start min-h-[58px]">
+                    <div
+                        onClick={() => onNavigate?.('contact')}
+                        className="py-4 px-3.5 sm:py-4.5 sm:px-4 md:p-5 border-r border-cyan-500/20 flex items-center justify-start min-h-[58px] cursor-pointer group hover:bg-cyan-950/30 transition-colors"
+                        title="お問い合わせページへ"
+                    >
                         <div className="font-mono text-[11px] text-cyan-300 tracking-wider flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2.5">
-                            <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider bg-cyan-950/80 text-cyan-300 border border-cyan-400/40 shadow-[0_0_10px_rgba(56,189,248,0.15)] whitespace-nowrap">
+                            <span className="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider bg-cyan-950/80 text-cyan-300 border border-cyan-400/40 shadow-[0_0_10px_rgba(56,189,248,0.15)] group-hover:border-cyan-400 whitespace-nowrap transition-colors">
                                 STATUS: ACCEPTING
                             </span>
-                            <span className="font-sans font-medium text-white text-[11px] sm:text-xs tracking-wide whitespace-nowrap">
-                                ご相談・新規案件 受付中
+                            <span className="font-sans font-medium text-white text-[11px] sm:text-xs tracking-wide whitespace-nowrap group-hover:text-cyan-200 transition-colors">
+                                ご相談・新規案件 受付中 →
                             </span>
                         </div>
                     </div>
@@ -40,7 +49,7 @@ const Hero: React.FC = () => {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="flex-grow flex flex-col justify-center py-4 md:py-6"
                 >
-                    <MusicHero title="THE MOMENT YOUR IDEA STARTS MOVING" />
+                    <MusicHero onNavigate={onNavigate} title="THE MOMENT YOUR IDEA STARTS MOVING" />
                 </motion.div>
             </div>
         </AuroraBackground>

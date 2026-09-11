@@ -18,7 +18,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
     return (
         <div className="w-full bg-[#03070d]">
-            <Hero />
+            <Hero onNavigate={onNavigate} />
 
             {/* Philosophy Section - Grid Layout */}
             <section className="border-b border-cyan-500/20 bg-[#03070d]">
