@@ -242,15 +242,15 @@ const MusicHero: React.FC<MusicHeroProps> = ({ onNavigate }) => {
                       }`} />
 
                       <div className="flex-grow min-w-0">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="font-sans text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-cyan-200 transition-colors truncate">
+                        <div className="flex flex-wrap sm:flex-nowrap items-baseline justify-between gap-x-2.5 gap-y-0.5">
+                          <span className="font-sans text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-cyan-200 transition-colors whitespace-nowrap">
                             {track.title}
                           </span>
-                          <span className="font-mono text-[11px] text-slate-400 shrink-0">
+                          <span className="font-mono text-[10px] sm:text-[11px] text-slate-400">
                             {track.category}
                           </span>
                         </div>
-                        <span className="text-[11px] font-mono text-cyan-300/70 block mt-0.5">
+                        <span className="text-[10px] sm:text-[11px] font-mono text-cyan-300/70 block mt-0.5">
                           {track.step}
                         </span>
                       </div>
