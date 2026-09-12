@@ -28,11 +28,8 @@ const Contact: React.FC = () => {
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
-    // 自社専用Worker APIエンドポイント（環境変数またはデフォルトURL）
-    const API_ENDPOINT = import.meta.env.VITE_CONTACT_API_URL || 
-        (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-            ? '/api/contact' 
-            : 'https://user-value-contact-api.tomomini0815.workers.dev');
+    // 自社専用Worker APIエンドポイント
+    const API_ENDPOINT = import.meta.env.VITE_CONTACT_API_URL || 'https://steep-darkness-7612.uservalue2021.workers.dev';
 
     const handleCheckboxChange = (value: string) => {
         setFormData(prev => ({
